@@ -3,44 +3,75 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/* début barre nav */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #A40505;
+    background-color: rgba(164,5,5,0.8);
     padding: 1rem;
 }
-
+.imgSize{
+    width: 50px;
+    height: 50px;
+}
 .navigation {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 .navbar-menu {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-
 .navbar-menu li {
     margin-left: 1rem;
 }
-
 .navbar-menu li a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
 }
-
-.navbar-menu li a:hover {
-    background-color: #575757;
-}
-.test{
+.adherer{
     background-color: #710303;
     border-radius: 30px;
     padding: 10px;
 }
+/* fin barre nav */
+
+/* début barre résaux sociaux */
+.socialbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 1rem;
+}
+
+.social {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.socialbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.socialbar-menu li {
+    margin-left: 1rem;
+}
+
+.socialbar-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+/* fin barre résaux sociaux */
