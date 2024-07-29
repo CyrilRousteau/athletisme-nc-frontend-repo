@@ -1,4 +1,4 @@
-const canvas = document.getElementById('raceCanvas');
+/*const canvas = document.getElementById('raceCanvas');
 const context = canvas.getContext('2d');
 const socket = io();
 const messageDiv = document.getElementById('message');
@@ -102,7 +102,7 @@ function draw() {
         context.drawImage(background3, finishLineX, 270, 20, canvas.height);
     }
 }*/
-
+/*
 // Ajouter une fonction pour calculer le temps écoulé
 function calculateElapsedTime(startTime, endTime) {
     const elapsedTime = endTime - startTime;
@@ -288,3 +288,4 @@ setInterval(updateFrames, 1000 / 60);
 
 // Start the initial countdown
 startCountdown();
+*/
