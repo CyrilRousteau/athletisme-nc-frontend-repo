@@ -75,3 +75,21 @@ body {
     transition: background-color 0.3s;
 }
 /* fin barre résaux sociaux */
+
+/* début footer */
+.footer{
+    background-color: #323232;
+    color: white;
+}
+.footerSocialbar {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-footer li {
+    list-style: none;
+}
+.nav-footer a {
+    text-decoration: none;
+    color: white; 
+}
+/* fin footer */
