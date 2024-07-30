@@ -14,11 +14,13 @@ body {
 .imgSize{
     width: 50px;
     height: 50px;
+    margin-left: auto;
 }
 .navigation {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
+    padding-left: 10px;
 }
 .navbar-menu {
     list-style: none;
@@ -56,18 +58,15 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 .socialbar-menu {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-
 .socialbar-menu li {
     margin-left: 1rem;
 }
-
 .socialbar-menu li a {
     color: white;
     text-decoration: none;
@@ -85,6 +84,9 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.socialbar-footer{
+    padding-right: 15px;
+}
 .nav-footer li {
     list-style: none;
 }
@@ -94,5 +96,8 @@ body {
 }
 .icone{
     padding-right: 20px;
+}
+.border-footer{
+    border-left: solid;
 }
 /* fin footer */
