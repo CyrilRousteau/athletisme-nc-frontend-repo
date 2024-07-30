@@ -1,6 +1,6 @@
 // models/QuizzScore.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
+const sequelize = require('../../database');
 const Joueur = require('./Joueur');
 const Jeu = require('./Jeu');
 

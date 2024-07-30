@@ -1,6 +1,6 @@
 // models/OrientationSportive.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
+const sequelize = require('../../database');
 
 const OrientationSportive = sequelize.define('OrientationSportive', {
     nom: {

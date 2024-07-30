@@ -4,13 +4,13 @@ const socketIo = require('socket.io');
 const sequelize = require('./database');
 const configureSocketIo = require('./socket'); // Fichier séparé pour la logique Socket.io
 
-const JoueurRoutes = require('./routes/JoueurRoutes');
-const CompetenceRoutes = require('./routes/CompetenceRoutes');
-const JeuRoutes = require('./routes/JeuRoutes');
-const PartieRoutes = require('./routes/PartieRoutes');
-const ScoreRoutes = require('./routes/ScoreRoutes');
-const ProfilRoutes = require('./routes/ProfilRoutes');
-const QuizzScoreRoutes = require('./routes/QuizzScoreRoutes');
+const JoueurRoutes = require('./backend/routes/joueurRoutes');
+const CompetenceRoutes = require('./backend/routes/CompetenceRoutes');
+const JeuRoutes = require('./backend/routes/JeuRoutes');
+const PartieRoutes = require('./backend/routes/PartieRoutes');
+const ScoreRoutes = require('./backend/routes/ScoreRoutes');
+const ProfilRoutes = require('./backend/routes/ProfilRoutes');
+const QuizzScoreRoutes = require('./backend/routes/QuizzScoreRoutes');
 
 const app = express();
 const server = http.createServer(app);

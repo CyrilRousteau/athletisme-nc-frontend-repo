@@ -1,6 +1,6 @@
 // models/Jeu.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
+const sequelize = require('../../database');
 const Competence = require('./Competence');
 
 const Jeu = sequelize.define('Jeu', {

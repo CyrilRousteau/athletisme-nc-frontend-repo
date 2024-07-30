@@ -1,4 +1,4 @@
-//const race = require('../backend/games/race');
+const race = require('./backend/games/race');
 
 
 module.exports = (io) => {
@@ -6,7 +6,7 @@ module.exports = (io) => {
         console.log('New client connected');
 
          // Intégration de la logique spécifique à mon jeu
-       //  race(io, socket);
+        race(io, socket);
 
         // Handle client disconnection
         socket.on('disconnect', () => {
