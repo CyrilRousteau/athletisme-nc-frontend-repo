@@ -8,13 +8,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(164,5,5,0.8);
+    background-color: #8c0e2c;
     padding: 1rem;
 }
-.imgSize{
-    width: 50px;
-    height: 50px;
-    margin-left: auto;
+.imgSize {
+    width: 150px;
+    height: 60px;
+    margin-left: 50px;
 }
 .navigation {
     color: white;
@@ -30,17 +30,31 @@ body {
 }
 .navbar-menu li {
     margin-left: 1rem;
+    transition: border-radius 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+.navbar-menu li:hover {
+    border-radius: 30px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    opacity: 1;
 }
 .navbar-menu li a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
+    display: block; 
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
-.adherer{
-    background-color: #710303;
+.navbar-menu li {
+    opacity: 0.8; 
+}
+.adherer {
+    background-color: #561717;
     border-radius: 30px;
-    padding: 10px;
+    padding: 3px;
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
+}
+.adherer:hover {
+    background-color: #910303; 
 }
 /* fin barre nav */
 
@@ -77,8 +91,12 @@ body {
 
 /* début footer */
 .footer{
-    background-color: #323232;
+    background-color: #8c0e2c;
+    
     color: white;
+}
+.sous-footer{
+    background-color: #323232;
 }
 .footerSocialbar {
     display: flex;
