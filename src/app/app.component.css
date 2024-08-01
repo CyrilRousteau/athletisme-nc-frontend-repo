@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'StretchPro';
+    src: url('../../public/font/StretchPro.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -52,6 +57,7 @@ body {
     border-radius: 30px;
     padding: 3px;
     transition: background-color 0.5s ease, border-radius 0.5s ease;
+    font-family: 'StretchPro';
 }
 .adherer:hover {
     background-color: #910303; 
