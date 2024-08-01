@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'StretchPro';
+    src: url(‘../../../../../public/font/StretchPro.otf) format(opentype)
+        
+}
+body {
+    font-family: 'StretchPro', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+.test{
+    background-color: rgba(34, 34, 34, 0.2);
+}
+.licence {
+    background-color: #561717;
+    border-radius: 30px;
+    padding: 3px;
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
+}
+.licence:hover {
+    background-color: #910303; 
+}
+.bg{
+    background-image: url("../../../public/img/169.png");
+    background-repeat: none;
+}
+.img{
+    width: 100%;
+    height: 100%;
+}
