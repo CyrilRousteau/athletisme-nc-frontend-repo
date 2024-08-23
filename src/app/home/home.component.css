@@ -22,7 +22,7 @@
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    width: 50%;
+    width: fit-content;
     transition: background-color 0.5s ease, border-radius 0.5s ease;
 }
 .licence-acc:hover {
@@ -52,4 +52,7 @@
 }
 .titre-acc{
     color: #561717;
+}
+.div-left{
+    padding-left: 3%;
 }
