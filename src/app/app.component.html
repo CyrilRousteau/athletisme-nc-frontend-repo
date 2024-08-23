@@ -10,16 +10,18 @@
     <nav class="navbar col-12 text-uppercase">
         <img src="/img/logo.png" alt="logo ligue athlétimse NC" class="imgSize col-6">
         <ul class="navbar-menu d-flex justify-content-end align-items-center col-6">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">Jeux</a></li>
-            <li><a href="#services">La ligue</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="adherer"><a>Adhérer</a></li>
+            <li><a routerLink="/">Accueil</a></li>
+            <li><a href="/game">Jeux</a></li>
+            <li><a href="/ligue">La ligue</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+            <li class="adherer"><a routerLink="/athletisme">Adhérer</a></li>
         </ul>
     </nav>
 </header>
 
-<app-home></app-home>
+<main>
+    <router-outlet></router-outlet>
+</main>
 
 <footer class="footer">
     <div class="col-12 row p-3 d-flex align-items-center">
@@ -49,7 +51,7 @@
                 <a href="#dd" class="socialbar-footer"><img src="/img/youtube.png" alt="icone youtube"></a>
             </div>
             <div class="col nav-footer">
-                <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2"><a href="">+687 96.18.08</a></li>
+                <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2">+687 96.18.08</li>
                 <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><a href="">ericreuillard80&#64;gmail.com</a></li>
                 <li><img src="/img/map.png" alt="icone map" class="icone p-2"><a href="">Stade Numa-Daly, 2 Rue Maurice-Herzog </a></li>
             </div>
