@@ -1,0 +1,54 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-inscription-modal',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './inscription-modal.component.html',
+  styleUrls: ['./inscription-modal.component.css']
+})
+export class InscriptionModalComponent {
+  @Output() closeModal = new EventEmitter<void>();
+
+  showModal = false;
+  joueur = {
+    pseudo: '',
+    age: null,
+    email: ''
+  };
+
+  constructor(private http: HttpClient) {}
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModalHandler() {
+    this.showModal = false;
+    this.closeModal.emit();
+  }
+
+  isFormValid(): boolean {
+    return !!this.joueur.pseudo;
+  }
+
+  onSubmit() {
+    if (this.isFormValid()) {
+      this.http.post('http://localhost:3001/api/joueurs', this.joueur)
+        .subscribe({
+          next: (response: any) => {
+            console.log('Inscription réussie', response);
+            this.closeModalHandler();
+            // Ici, vous pouvez ajouter la logique pour rediriger vers les jeux
+          },
+          error: (error: any) => {
+            console.error('Erreur lors de l\'inscription', error);
+            // Gérer l'erreur (par exemple, afficher un message à l'utilisateur)
+          }
+        });
+    }
+  }
+}
