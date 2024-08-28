@@ -28,6 +28,9 @@
 .licence-acc:hover {
     background-color: #910303; 
 }
+.fit-div{
+    width: 100%;
+}
 .bg-img {
     background-image: url("../../../public/img/ligne.png");
     background-repeat: no-repeat; 
@@ -40,7 +43,7 @@
     height: 100%;
 }
 .img-acc{
-    width: 40%;
+    width: 60%;
     border-radius: 5%;
 }
 .font{
@@ -56,15 +59,16 @@
 .div-left{
     padding-left: 3%;
 }
-.monter{
+.monter-container {
+    position: fixed;
+    bottom: 3%;
+    right: 2%; 
+    z-index: 1000;
+}
+.monter {
     background-color: #561717;
     width: fit-content;
     height: fit-content;
     border-radius: 30px;
     margin: 2%;
-}
-.monter-container {
-    position: sticky;
-    top: 50%;
-    z-index: 1000;
 }

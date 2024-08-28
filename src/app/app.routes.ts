@@ -13,5 +13,4 @@ export const routes: Routes = [
   { path: 'game', component: GameComponent },
   { path: 'ligue', component: LigueComponent },
   { path: 'rgpd', component: RgpdComponent },
-  // Ajoutez d'autres routes ici
 ];
