@@ -2,7 +2,7 @@
     background-color: rgba(34, 34, 34, 0.2);
 }
 .licence {
-    background-color: #561717;
+    background-color: #910303;
     border-radius: 30px;
     padding: 3px;
     color: white;
@@ -12,10 +12,10 @@
     transition: background-color 0.5s ease, border-radius 0.5s ease;
 }
 .licence:hover {
-    background-color: #910303; 
+    background-color: #561717; 
 }
 .bg-img {
-    background-image: url("../../../public/img/ligne.png");
+    background-image: url("../../../public/img/ligne.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;

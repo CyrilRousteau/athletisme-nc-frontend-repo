@@ -1,8 +1,19 @@
-.bg-img {
-    background-image: url("../../../public/img/ligne.png");
+.bg-img1  {
+    background-image: url("../../../public/img/ligne.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
+}
+
+.bg-img2  {
+    background-image: url("../../../public/img/contact.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
+
+.bg-black {
+    background-color: black;
 }
 
 p {
@@ -25,4 +36,337 @@ span {
 
 .font{
     font-family: 'StretchPro';
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+/* debut insta */
+#insta,
+#insta * {
+  box-sizing: border-box;
+}
+
+#insta img {
+  display: block;
+}
+
+#insta {
+  margin: 50px auto;
+  width: 350px;
+  border: 1px solid var(--grey);
+  font-family: "Arial", serif;
+  font-size: 13px;
+  --grey: #cccccc;
+  --pink: #fe286a;
+  background-color: #ffffff;
+  border-radius: 5%;
+  text-align: left;
+}
+
+#insta .flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#insta a {
+  text-decoration: none;
+}
+
+#insta > #top-menu-bar {
+  text-align: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--grey);
+  justify-content: space-between;
+}
+
+#insta > #top-menu-bar > img {
+  height: 30px;
+}
+
+#insta > #profile > #profile-header {
+  padding: 15px;
+}
+
+#insta > #profile > #profile-header > img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid #6242b3;
+}
+
+#insta > #profile > #profile-header > #profile-stats {
+  flex: 1;
+}
+
+#insta
+  > #profile
+  > #profile-header
+  > #profile-stats
+  > #profile-following-stats {
+  margin-bottom: 8px;
+}
+
+#insta
+  > #profile
+  > #profile-header
+  > #profile-stats
+  > #profile-following-stats
+  > div {
+  width: 32.3%;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  color: #999;
+}
+
+#insta
+  > #profile
+  > #profile-header
+  > #profile-stats
+  > #profile-following-stats
+  > div
+  > span {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+}
+
+#insta > #profile > #profile-header > #profile-stats > #profile-links {
+  text-align: center;
+}
+
+#insta > #profile > #profile-header > #profile-stats > #profile-links > a {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid var(--grey);
+  text-align: center;
+  border-radius: 5px;
+  color: #000;
+  text-decoration: none;
+  width: 100px;
+  font-size: 12px;
+}
+
+#insta
+  > #profile
+  > #profile-header
+  > #profile-stats
+  > #profile-links
+  a:not(:last-child) {
+  margin: 0 10px;
+}
+
+#insta > #profile > #profile-header > #profile-stats > #profile-links a.active {
+  background: var(--pink);
+  color: #fff;
+  border: 1px solid var(--pink);
+}
+
+#insta > #profile > #profile-description {
+  padding: 0 15px 15px 15px;
+}
+
+#insta > #profile > #profile-description > p {
+  margin: 5px 0;
+}
+
+#insta > #profile > #profile-description > a {
+  color: var(--pink);
+}
+
+#profile-bar {
+  padding: 10px 0;
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+}
+
+#insta > #profile > #profile-bar div,
+#insta > #profile > #profile-grid > .profile-row > .profile-row-image {
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+#insta > #profile > #profile-grid > .profile-row:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+#insta
+  > #profile
+  > #profile-grid
+  > .profile-row
+  > .profile-row-image:not(:last-child) {
+  margin-right: 2px;
+}
+
+#insta > #profile > #profile-grid > .profile-row > .profile-row-image > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#insta #post > #post-user > img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+#insta #post > #post-user {
+  padding: 10px;
+}
+
+#insta #post > #post-user > #username {
+  flex: 1;
+  margin-left: 10px;
+}
+
+#insta #post > #post-image {
+  width: 350px;
+}
+
+#insta #post > #post-buttons svg {
+  margin: 10px;
+}
+
+#insta #post > #post-caption {
+  padding: 0 10px 10px 10px;
+}
+
+#insta #post #post-comment-link {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0;
+}
+
+#insta #post > #post-date {
+  font-size: 10px;
+  color: #999;
+}
+
+#insta #post #comments div {
+  margin: 4px 0;
+}
+
+#insta #post #comments div.reply {
+  border-left: 3px solid #ccc;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+#story {
+  position: relative;
+}
+
+#story > #story-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  padding: 10px;
+}
+
+#story > #story-header > #story-bar > div {
+  height: 3px;
+  background: #ffffff;
+  margin: 2px;
+  width: 100%;
+  border-radius: 5px;
+  opacity: 0.6;
+}
+
+#story > #story-header > #story-bar > div.active {
+  opacity: 1;
+}
+
+#story > #story-header > #story-user {
+  justify-content: start;
+  margin-top: 10px;
+}
+
+#story > #story-header > #story-user > #username {
+  color: #fff;
+  margin-left: 10px;
+}
+
+#story > #story-header > #story-user > img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+#story > #story-comment {
+  bottom: 10px;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+}
+
+#story > #story-comment > input {
+  display: block;
+  padding: 10px;
+  border-radius: 20px;
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+#insta .page-hidden {
+  display: none;
+}
+
+#insta [target] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover, a:focus, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+/* fin insta */
+
+.licence {
+  background-color: #910303;
+  border-radius: 30px;
+  padding: 20%;
+  color: white !important;
+  text-decoration: none;
+  padding: 10px;
+  margin: 30px;
+  width: auto;
+  transition: background-color 0.5s ease, border-radius 0.5s ease;
+  align-content: center;
+}
+.licence:hover {
+  background-color: #561717; 
+}
+
+.lieu {
+  color: white !important;
 }
