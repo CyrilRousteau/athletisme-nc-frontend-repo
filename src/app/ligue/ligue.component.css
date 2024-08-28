@@ -1,0 +1,53 @@
+.bg-color{
+    background-color: #000;
+}
+.bg-img {
+    background-image: url("../../../public/img/ligne.png");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    width: fit-content;
+}
+.bg-img-ligue {
+    background-image: url("../../../public/img/piste.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    width: fit-content;
+}
+.bg-img-carte {
+    background-image: url("../../../public/img/duplantis.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    width: fit-content;
+}
+.font{
+    font-family: 'StretchPro';
+}
+.licence-acc {
+    background-color: #561717;
+    border-radius: 30px;
+    padding: 3px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
+}
+.licence-acc:hover {
+    background-color: #910303; 
+}
+.monter-container {
+    position: fixed;
+    bottom: 3%;
+    right: 2%; 
+    z-index: 1000;
+}
+.monter {
+    background-color: #561717;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    margin: 2%;
+}
