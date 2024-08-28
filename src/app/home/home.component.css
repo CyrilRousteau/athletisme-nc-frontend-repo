@@ -2,10 +2,12 @@
     background-color: rgba(34, 34, 34, 0.2);
 }
 .licence {
-    background-color: #561717;
+    background-color: #fff;
+    background-color: #fff;
     border-radius: 30px;
     padding: 3px;
-    color: white;
+    color: #561717;
+    color: #561717;
     text-decoration: none;
     padding: 0.5rem 1rem;
     width: 50%;
@@ -13,17 +15,38 @@
 }
 .licence:hover {
     background-color: #910303; 
+    color: #fff;
+}
+.licence-acc {
+    background-color: #561717;
+    border-radius: 30px;
+    padding: 3px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
+}
+.licence-acc:hover {
+    background-color: #910303; 
+}
+.fit-div{
+    width: 100%;
 }
 .bg-img {
     background-image: url("../../../public/img/ligne.png");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
+    width: fit-content;
 }
-
 .img{
     width: 100%;
     height: 100%;
+}
+.img-acc{
+    width: 60%;
+    border-radius: 5%;
 }
 .font{
     font-family: 'StretchPro';
@@ -31,4 +54,23 @@
 .texte{
     padding-left: 100px;
     padding-right: 100px;
+}
+.titre-acc{
+    color: #561717;
+}
+.div-left{
+    padding-left: 3%;
+}
+.monter-container {
+    position: fixed;
+    bottom: 3%;
+    right: 2%; 
+    z-index: 1000;
+}
+.monter {
+    background-color: #561717;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    margin: 2%;
 }
