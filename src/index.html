@@ -11,30 +11,30 @@
 <body>
   <app-root></app-root>
   <script>
-    $(document).ready((e) => {
-    const mainIcon =
-      "https://64.media.tumblr.com/96e42366de43920425255a76ec32b0d2/tumblr_p9wsblmVeo1t4rhclo1_400.png";
-    const username = "daughterofhecate";
-    const profileDescription = "we love magic and...that's it.";
-    const profileLink = "https://google.com";
-  
-    $("#profile").show();
-    $(".profile-icon").attr("src", mainIcon);
-    $(".usernameText").text(username);
-    $(".descriptionText").text(profileDescription);
-    $(".profileLink").attr("href", profileLink);
-    $(".profileLink").text(profileLink);
-  
-    $("[target]").click((a) => {
-      const target = $(a.currentTarget).attr("target");
-      $(".page-hidden").hide();
-      $("#" + target).toggle();
-  
-      if (target.includes("story")) $("#top-menu-bar").hide();
-      else $("#top-menu-bar").show();
-    });
-  });
-  </script>
+            $(document).ready((e) => {
+            const mainIcon =
+              "https://64.media.tumblr.com/96e42366de43920425255a76ec32b0d2/tumblr_p9wsblmVeo1t4rhclo1_400.png";
+            const username = "daughterofhecate";
+            const profileDescription = "we love magic and...that's it.";
+            const profileLink = "https://google.com";
+          
+            $("#profile").show();
+            $(".profile-icon").attr("src", mainIcon);
+            $(".usernameText").text(username);
+            $(".descriptionText").text(profileDescription);
+            $(".profileLink").attr("href", profileLink);
+            $(".profileLink").text(profileLink);
+          
+            $("[target]").click((a) => {
+              const target = $(a.currentTarget).attr("target");
+              $(".page-hidden").hide();
+              $("#" + target).toggle();
+          
+              if (target.includes("story")) $("#top-menu-bar").hide();
+              else $("#top-menu-bar").show();
+            });
+          });
+          </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
