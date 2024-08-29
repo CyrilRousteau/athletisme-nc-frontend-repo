@@ -1,57 +1,64 @@
-<div class="text-center bg-img1">
-    <div class="row align-items-center">
+<div class="text-center bg-img1 padding-nav">
+    <div class=" align-items-center ">
       <h1 class="font">N’hésitez pas à nous contacter</h1>
-      <div class="col">
-        <p>Paul POANIEWA</p>
-        <img class="contact-pic" src="img/paul.png" alt="photo Paul POANIEWA">
-        <p class="font">DIRECTEUR DE LA LIGUE</p>
-        <div>
-            <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2"><span>+687 28.16.55</span></li>
-            <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><span>prispier&#64;corail.nc</span></li>
-
-        </div>
-        <div class="col">
-          <p>Christine LAPORTE</p>
-          <img class="contact-pic" src="img/paul.png" alt="photo Paul POANIEWA">
-          <p class="font">SECRÉTAIRE DE LA LIGUE</p>
-          <div>
-              <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2"><span>+687 XX.XX.XX</span></li>
-              <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><span>XX.XX.XX&#64;gmail.com</span></li>
-          </div>
-        </div>
-        <div class="col">
-          <p>Eric REUILLARD</p>
+      
+        <div class="d-flex flex-row">
+          <div class="col">
+          <p>Paul POANIEWA</p>
           <img class="contact-pic" src="img/paul.png" alt="photo Paul POANIEWA">
           <p class="font">DIRECTEUR DE LA LIGUE</p>
           <div>
               <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2"><span>+687 28.16.55</span></li>
-              <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><span>ericreuillard80&#64;gmail.com</span></li>
+              <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><span>prispier&#64;corail.nc</span></li>
+
           </div>
         </div>
-      </div>
+          <div class="col">
+            <p>Christine LAPORTE</p>
+            <img class="contact-pic" src="img/paul.png" alt="photo Paul POANIEWA">
+            <p class="font">SECRÉTAIRE DE LA LIGUE</p>
+            <div>
+                <img src="/img/phone.png" alt="icone téléphone" class="icone p-2"><span>+687 76.40.67</span>
+                <br>
+                <img src="/img/mail.png" alt="icone mail" class="icone p-2"><span>XX.XX.XX&#64;gmail.com</span>
+            </div>
+          </div>
+          <div class="col">
+            <p>Eric REUILLARD</p>
+            <img class="contact-pic" src="img/paul.png" alt="photo Paul POANIEWA">
+            <p class="font">DIRECTEUR DE LA LIGUE</p>
+            <div>
+                <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2"><span>+687 28.16.55</span></li>
+                <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><span>ericreuillard80&#64;gmail.com</span></li>
+            </div>
+          </div>
+        </div>
+
 
     </div>
 </div>
 <div class="text-center bg-img2">
-  <div class="row align-items-center">
+  <div class=" align-items-center">
     <h1 class="font">Infoormations sur la liguue</h1>
-    <div class="col">
-      <h2>HORAIRE D’OUVERTURE :</h2>
-      <div class="row align-items-center">
+    <div class="d-flex flex-row">
+      <div class="col">
+        <h2>HORAIRE D’OUVERTURE :</h2>
+        <div class=" align-items-center d-flex flex-row">
+          <div class="col">
+            <h3>En semaine :</h3>
+          </div>
         <div class="col">
-          <h3>En semaine :</h3>
+          <h3>Samedi :</h3>
         </div>
-      <div class="col">
-        <h3>Samedi :</h3>
+        <div class="col">
+          <h3>Dimanche :</h3>
+        </div>
+        </div>
       </div>
       <div class="col">
-        <h3>Dimanche :</h3>
+        <img src="/img/map.png" alt="icone map" class="icone p-2"><a class="lieu" href="">Stade Numa-Daly, 2 Rue Maurice-Herzog </a>
       </div>
-      </div>
-    </div>
-    <div class="col">
-      <img src="/img/map.png" alt="icone map" class="icone p-2"><a class="lieu" href="">Stade Numa-Daly, 2 Rue Maurice-Herzog </a>
-    </div>
+  </div>
 
     <!-- debut carrousel -->
 
@@ -244,36 +251,11 @@
     </div>
 </div>
 <div class="text-center bg-black">
-  <div class="row align-items-center justify-content-center">
-    <h1 class="font">Vous savez désormais quelle licence choisir et dans quel club vous inscrire ? Alors n’hésitez plus :</h1>
-    <a href="" class="licence font">Adhérer</a>
+  <div class=" align-items-center justify-content-center ">
+    <h1 class="font">Vous savez désormais quelle licence choisir et dans quel club vous inscrire ? 
+      Alors n’hésitez plus :</h1>
+    <a href="/athletisme" class="licence font text-uppercase">Adhérer</a>
   </div>
 </div>
 
-<script>
-  $(document).ready((e) => {
-  const mainIcon =
-    "https://64.media.tumblr.com/96e42366de43920425255a76ec32b0d2/tumblr_p9wsblmVeo1t4rhclo1_400.png";
-  const username = "daughterofhecate";
-  const profileDescription = "we love magic and...that's it.";
-  const profileLink = "https://google.com";
-
-  $("#profile").show();
-  $(".profile-icon").attr("src", mainIcon);
-  $(".usernameText").text(username);
-  $(".descriptionText").text(profileDescription);
-  $(".profileLink").attr("href", profileLink);
-  $(".profileLink").text(profileLink);
-
-  $("[target]").click((a) => {
-    const target = $(a.currentTarget).attr("target");
-    $(".page-hidden").hide();
-    $("#" + target).toggle();
-
-    if (target.includes("story")) $("#top-menu-bar").hide();
-    else $("#top-menu-bar").show();
-  });
-});
-
-</script>
 
