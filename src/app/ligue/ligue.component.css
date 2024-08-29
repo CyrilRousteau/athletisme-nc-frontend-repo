@@ -2,25 +2,22 @@
     background-color: #000;
 }
 .bg-img {
-    background-image: url("../../../public/img/ligne.png");
+    background-image: url("../../../public/img/ligne.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
-    width: fit-content;
 }
 .bg-img-ligue {
     background-image: url("../../../public/img/piste.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
-    width: fit-content;
 }
 .bg-img-carte {
     background-image: url("../../../public/img/duplantis.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
-    width: fit-content;
 }
 .font{
     font-family: 'StretchPro';
@@ -50,4 +47,14 @@
     height: fit-content;
     border-radius: 30px;
     margin: 2%;
+}
+.img-size{
+    width: 50%;
+}
+.img-carte{
+    width: 100%;
+}
+.grid-carte{
+    display: flex;
+    flex-direction: column;
 }
