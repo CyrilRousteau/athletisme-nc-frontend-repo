@@ -1,22 +1,31 @@
 <header>
-    <nav class="navbar col-12 text-uppercase">
-        <a href="/"><img src="/img/logo.png" alt="logo ligue athlétimse NC" class="imgSize col-4"></a>
-        <ul class="navbar-menu d-flex justify-content-end align-items-center col-8">
-            <div class="col-9 d-flex flex-row justify-content-end">
-                <li><a routerLink="/">Accueil</a></li>
-                <li><a href="/game">Jeux</a></li>
-                <li><a href="/ligue">La ligue</a></li>
-                <li><a routerLink="/contact">Contact</a></li>
-                <li class="adherer"><a routerLink="/athletisme">Adhérer</a></li>
+    <nav class="navbar navbar-expand-lg col-12 text-uppercase">
+        <a href="/" class="navbar-brand col-lg-4">
+            <img src="/img/logo.png" alt="logo ligue athlétisme NC" class="imgSize img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse col-lg-8" id="navbarNav">
+            <div class="navbar-menu d-flex justify-content-end align-items-center col-9">
+                <ul class="navbar-nav d-flex flex-row justify-content-end">
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/game">Jeux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ligue">La ligue</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item adherer"><a class="nav-link" href="/athletisme">Adhérer</a></li>
+                </ul>
             </div>
-            <div class="col-3 d-flex flex-row justify-content-end">
-                <li><a href="https://www.facebook.com/p/Ligue-Nouvelle-Cal%C3%A9donie-Athl%C3%A9tisme-61553746453933/?paipv=0&eav=AfbWZK3SVIkajjfA-cURxexKHNVnz3g54wjtvtbawuYag3BiEfrCNY54ejuHWzfi7r8&_rdr"><img src="/img/facebook.png" alt="icone facebook"></a></li>
-                <li><a href="https://www.instagram.com/ligue_athle_nc/"><img src="/img/instagram.png" alt="icone instagram"></a></li>
-                <li><a href="https://www.youtube.com/@lescagous-nouvelle-caledon5115"><img src="/img/youtube.png" alt="icone youtube"></a></li>
+            <div class="navbar-nav d-flex flex-row justify-content-end col-3">
+                <li class="nav-item"><a href="https://www.facebook.com/p/Ligue-Nouvelle-Cal%C3%A9donie-Athl%C3%A9tisme-61553746453933/?paipv=0&eav=AfbWZK3SVIkajjfA-cURxexKHNVnz3g54wjtvtbawuYag3BiEfrCNY54ejuHWzfi7r8&_rdr" class="nav-link"><img src="/img/facebook.png" alt="icone facebook" class="social-icon"></a></li>
+                <li class="nav-item"><a href="https://www.instagram.com/ligue_athle_nc/" class="nav-link"><img src="/img/instagram.png" alt="icone instagram" class="social-icon"></a></li>
+                <li class="nav-item"><a href="https://www.youtube.com/@lescagous-nouvelle-caledon5115" class="nav-link"><img src="/img/youtube.png" alt="icone youtube" class="social-icon"></a></li>
             </div>
-        </ul>
+        </div>
     </nav>
 </header>
+
+
 
 <main>
     <router-outlet></router-outlet>

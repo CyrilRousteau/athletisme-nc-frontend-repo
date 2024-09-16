@@ -2,7 +2,7 @@
     <!-- début Présentation de la ligue -->
     <div class="bg-img col-12 bg-color text-light d-flex justify-content-center p-5" id="top">
         <div class="col-7 d-flex flex-column">
-            <h1 class="font pb-3">PPrésentation de la ligue</h1>
+            <h1 class="font fs-3">PPrésentation de la ligue</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae molestiae est id consequatur, nostrum inventore animi cupiditate? Nam recusandae consequatur accusantium dolorem qui. Officia ratione esse laborum in facilis error.
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam vero harum facere adipisci quos rerum quam dolores facilis voluptates, vel nam vitae esse voluptas voluptate voluptatem non, aperiam accusamus sunt?
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus voluptates, omnis doloribus est blanditiis id perspiciatis dicta similique aliquam minima dolore dolor. Voluptas vero neque ex quos, pariatur tempore explicabo?
@@ -23,54 +23,50 @@
     </div>
 
     <!-- début webdoc -->
-    <div class="bg-img-ligue col-12 bg-color text-light d-flex justify-content-center p-5" id="webdoc">
-        <div class="col-7 d-flex flex-column">
-            <h1 class="font pb-3">NNos Webdocumentaires “À Vos Marques”</h1>
-            <div class="d-flex flex-row justify-content-center align-items-center">
-                <div class="p-5">
-                    <p class="d-flex justify-content-center" class="d-flex justify-content-center"><b>“À vos marques : Loan VILLE, à la pointe de la performance”</b></p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=dnuvb91EH-ZL5Are" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p class="d-flex justify-content-center"><b>Partez à la rencontre de la jeune athlète prodige du 400m haies Loan VILLE pour une journée complète !</b></p>
-                </div>
-                <div class="col-lg-6 col-md-12 p-3">
-                    <p class="text-center"><b>“À vos marques : Athlète, quel est ton rêve ?”</b></p>
-                    <div class="d-flex justify-content-center">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/mEfVm8KEZIk?si=EVWKHEiyXUACc78Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <p class="text-center"><b>Rêvez aussi grand que les jeunes espoirs du caillou à travers ce documentaire !</b></p>
-                </div>
+
+    <div class=" bg-img-ligue">
+        <div class="container py-5">
+            <h1 class="text-center mb-4 font fs-3 fs-lg-1">NNos Webdocumentaires : <br>“À Vos Marques”</h1>
+            <div class="row">
+              <div class="col-md-6 mb-4 text-light">
+                <p class="text-center">“À vos marques : Loan VILLE, à la pointe de la performance”</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=dnuvb91EH-ZL5Are" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="text-center">Partez à la rencontre de la jeune athlète prodige du 400m haies Loan VILLE pour une journée complète !</p>
+              </div>
+              <div class="col-md-6 mb-4 text-light">
+                <p class="text-center"><b>“À vos marques : Athlète, quel est ton rêve ?”</b></p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/mEfVm8KEZIk?si=EVWKHEiyXUACc78Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="text-center">Rêvez aussi grand que les jeunes espoirs du caillou à travers ce documentaire !</p>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
-    
+
+   
     <!-- fin webdoc -->
 
     <!-- début cartes athletes -->
-    <div class="bg-img-carte col-12 bg-color text-light d-flex justify-content-center p-5">
-        <div class="col-7 d-flex flex-column">
-            <h1 class="font p-3">CCartes des athlètes</h1>
-            <div class="d-flex flex-row justify-content-center align-items-center">
-                <div class="p-5">
-                    <p class="d-flex justify-content-center" class="d-flex justify-content-center"><b>Loan VILLE</b></p>
-                    <img src="img/marchand.jpg" class="rounded" alt="">
-                    <p class="d-flex justify-content-center"><b>400m haie</b></p>
+    <div class=" bg-img-ligue">
+        <div class="container py-5">
+            <h1 class="text-center mb-4 font fs-3 fs-lg-1">CCartes Des Athlètes</h1>
+            <div id="app" class="container">
+                <div class="card" style="background-image: url('/img/marchand.jpg')">
+                  <h1>Loan VILLE</h1>
+                  <p>400m haies</p>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 p-3 flex-column d-flex justify-content-center align-items-center">
-                    <p class="text-center"><b>Pierre FAIRBANK</b></p>
-                    <img src="img/marchand.jpg" class="rounded img-fluid img-size" alt="Pierre FAIRBANK">
-                    <p class="text-center"><b>400m haie</b></p>
+                <div class="card" style="background-image: url('/img/marchand.jpg');">
+                  <h1>Beaches</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 p-3 flex-column d-flex justify-content-center align-items-center">
-                    <p class="text-center"><b>Lesly FILITUULAGA</b></p>
-                    <img src="img/marchand.jpg" class="rounded img-fluid img-size" alt="Lesly FILITUULAGA">
-                    <p class="text-center"><b>400m haie</b></p>
+                <div class="card" style="background-image: url('/img/marchand.jpg');">
+                  <h1>Trees</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 p-3 flex-column d-flex justify-content-center align-items-center">
-                    <p class="text-center"><b>Felise VAHAI SOSAIA</b></p>
-                    <img src="img/marchand.jpg" class="rounded img-fluid img-size" alt="Felise VAHAI SOSAIA">
-                    <p class="text-center"><b>400m haie</b></p>
+                <div class="card" style="background-image: url('/img/marchand.jpg');">
+                  <h1>Lakes</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
-            </div>
+              </div>
         </div>
     </div>
     
@@ -78,19 +74,20 @@
 
     <!-- début lieux -->
     <div class="bg-color">
-        <div class="d-flex align-items-center p-5 flex-lg-row grid-carte">
-            <div class="d-flex flex-column text-light col-lg-4">
-                <p>Envie de vous intéresser aux différents clubs qui composent notre ligue d’athlétisme ?</p>
-                <p>Voici une carte interactive qui vous permettra de trouver le club le plus proche de chez vous !</p>
-            </div>
-            <div class="col-lg-8 d-flex justify-content-center">
-                <img src="img/carte.jpg" alt="" class="rounded img-carte">
-            </div>
+    <div class="d-flex align-items-center p-5 flex-column flex-lg-row grid-carte">
+        <div class="d-flex flex-column text-light col-12 col-lg-4 mb-4 mb-lg-0">
+            <p>Envie de vous intéresser aux différents clubs qui composent notre ligue d’athlétisme ?</p>
+            <p>Voici une carte interactive qui vous permettra de trouver le club le plus proche de chez vous !</p>
         </div>
-        <div class="p-5 text-light d-flex flex-column align-items-center">
-            <p>Retrouvez également toutes les informations utiles pour pratiquer l’athlétisme (les avantages, les licences, etc...)</p>
-            <a href="/licence" class="licence-acc font">LES LICENCES</a>
+        <div class="col-12 col-lg-8 d-flex justify-content-center">
+            <img src="img/carte.jpg" alt="Carte interactive des clubs" class="rounded img-fluid img-carte">
         </div>
     </div>
+    <div class="p-5 text-light d-flex flex-column align-items-center text-center">
+        <p>Retrouvez également toutes les informations utiles pour pratiquer l’athlétisme (les avantages, les licences, etc...)</p>
+        <a href="/licence" class="btn licence-acc font mt-3">LES LICENCES</a>
+    </div>
+</div>
+
     <!-- fin lieux -->
 </div>
