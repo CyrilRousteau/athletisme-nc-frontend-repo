@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../../database');
 const Joueur = require('./Joueur');
-const Jeu = require('./Jeu');
+const Jeux = require('./Jeux');
 
 const Partie = sequelize.define('Partie', {
     joueur_id: {
@@ -15,7 +15,7 @@ const Partie = sequelize.define('Partie', {
     jeu_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: Jeu,
+            model: Jeux,
             key: 'id'
         }
     },

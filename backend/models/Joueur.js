@@ -1,4 +1,3 @@
-// models/Joueur.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../../database');
 
@@ -9,16 +8,18 @@ const Joueur = sequelize.define('Joueur', {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    date_naissance: {
-        type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     date_creation: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
     }
+}, {
+    tableName: 'Joueurs'
 });
+
+Joueur.associate = (models) => {
+    Joueur.hasMany(models.Score, { foreignKey: 'joueur_id' });
+};
 
 module.exports = Joueur;

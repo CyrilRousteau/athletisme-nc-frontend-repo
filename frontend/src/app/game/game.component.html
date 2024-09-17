@@ -1,1 +1,59 @@
-<p>game works!</p>
+<div class="game-container">
+
+  <app-inscription-modal *ngIf="!hidePseudo" (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
+
+  <p *ngIf="welcomeMessage && !hidePseudo">{{ welcomeMessage }}</p>
+
+  <button *ngIf="welcomeMessage && !hidePseudo" (click)="startGame()" class="play-button">Jouer</button>
+
+  <div class="title-container">
+    <p class="title" *ngIf="hidePseudo">C'est parti !</p>
+  </div>
+
+  <div *ngIf="showGame" class="iframe-container">
+    <iframe [src]="safeGameUrl" width="600" height="400"></iframe>
+  </div>
+
+  <div *ngIf="showGame">
+    <h2>J'inscris mon score</h2>
+    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
+    <button (click)="submitScore()">OK</button>
+  </div>
+
+  <div *ngIf="showQuiz">
+    <app-quiz 
+    [quizIndex]="currentQuizIndex" 
+    (quizCompleted)="onQuizCompleted($event)">
+  </app-quiz>
+  </div>
+
+  <div *ngIf="showSecondGame" class="iframe-container">
+    <iframe [src]="safeSecondGameUrl" width="600" height="400"></iframe>
+  </div>
+
+  <div *ngIf="showSecondGame">
+    <h2>J'inscris mon score2</h2>
+    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
+    <button (click)="submitScore()">OK</button>
+  </div>
+
+  <div *ngIf="showThirdGame" class="iframe-container">
+    <iframe [src]="safeThirdGameUrl" width="600" height="400"></iframe>
+  </div>
+
+  <div *ngIf="showThirdGame">
+    <h2>J'inscris mon score3</h2>
+    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
+    <button (click)="submitScore()">OK</button>
+  </div>
+
+  <div *ngIf="showFourthGame" class="iframe-container">
+    <iframe [src]="safeFourthGameUrl" width="600" height="400"></iframe>
+  </div>
+
+  <div *ngIf="showFourthGame">
+    <h2>J'inscris mon score4</h2>
+    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
+    <button (click)="submitScore()">OK</button>
+  </div>
+</div>

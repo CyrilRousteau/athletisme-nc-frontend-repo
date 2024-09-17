@@ -1,0 +1,28 @@
+.bg-img {
+    background-image: url("../../../../public/img/ligne.png");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
+
+p {
+    color : white;
+}
+
+span {
+    color :white;
+}
+
+.col {
+    margin: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-pic {
+    width: 150px;
+}
+
+.font{
+    font-family: 'StretchPro';
+}

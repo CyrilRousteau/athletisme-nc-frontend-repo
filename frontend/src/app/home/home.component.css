@@ -1,0 +1,34 @@
+.bg-color{
+    background-color: rgba(34, 34, 34, 0.2);
+}
+.licence {
+    background-color: #561717;
+    border-radius: 30px;
+    padding: 3px;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    width: 50%;
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
+}
+.licence:hover {
+    background-color: #910303; 
+}
+.bg-img {
+    background-image: url("../../../../public/img/ligne.png");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+.font{
+    font-family: 'StretchPro';
+}
+.texte{
+    padding-left: 100px;
+    padding-right: 100px;
+}

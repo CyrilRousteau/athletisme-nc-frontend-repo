@@ -1,4 +1,4 @@
-// controllers/QuizzScoreController.js
+
 const QuizzScore = require('../models/QuizzScore');
 
 exports.createQuizzScore = async (req, res) => {

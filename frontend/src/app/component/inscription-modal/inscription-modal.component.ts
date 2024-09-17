@@ -12,17 +12,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InscriptionModalComponent {
   @Output() closeModal = new EventEmitter<void>();
+  @Output() inscriptionSuccess = new EventEmitter<any>(); // Modifier pour émettre un objet
 
   showModal = false;
   joueur = {
     pseudo: '',
-    age: null,
     email: ''
   };
 
   constructor(private http: HttpClient) {}
 
   openModal() {
+    console.log('Ouverture de la modale d\'inscription');
     this.showModal = true;
   }
 
@@ -42,7 +43,7 @@ export class InscriptionModalComponent {
           next: (response: any) => {
             console.log('Inscription réussie', response);
             this.closeModalHandler();
-            // Ici, vous pouvez ajouter la logique pour rediriger vers les jeux
+            this.inscriptionSuccess.emit(response); // Émettre l'événement avec l'objet joueur
           },
           error: (error: any) => {
             console.error('Erreur lors de l\'inscription', error);

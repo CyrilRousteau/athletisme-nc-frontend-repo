@@ -1,23 +1,14 @@
-// models/QuizzScore.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../../database');
-const Joueur = require('./Joueur');
-const Jeu = require('./Jeu');
 
 const QuizzScore = sequelize.define('QuizzScore', {
     joueur_id: {
         type: DataTypes.INTEGER,
-        references: {
-            model: Joueur,
-            key: 'id'
-        }
+        allowNull: false
     },
     jeu_id: {
         type: DataTypes.INTEGER,
-        references: {
-            model: Jeu,
-            key: 'id'
-        }
+        allowNull: false
     },
     score: {
         type: DataTypes.INTEGER,
@@ -28,6 +19,15 @@ const QuizzScore = sequelize.define('QuizzScore', {
         allowNull: false,
         defaultValue: DataTypes.NOW
     }
+}, {
+    tableName: 'QuizzScores',
+    timestamps: true 
 });
+
+// Définir les associations dans une fonction séparée
+QuizzScore.associate = (models) => {
+    QuizzScore.belongsTo(models.Joueur, { foreignKey: 'joueur_id' });
+    QuizzScore.belongsTo(models.Jeux, { foreignKey: 'jeu_id' });
+};
 
 module.exports = QuizzScore;
