@@ -15,13 +15,6 @@
     
     <!-- fin Présentation de la ligue -->
 
-    <!-- Le bouton de monter fixe sur la page -->
-    <div id="monter-container" class="monter-container d-flex justify-content-end align-items-end col-1">
-        <div class="monter p-3 d-flex justify-content-center align-items-center">
-            <a href="#top"><img src="img/monter.png" alt="flèche monter"></a>
-        </div>
-    </div>
-
     <!-- début webdoc -->
 
     <div class=" bg-img-ligue">
@@ -80,7 +73,7 @@
             <p>Voici une carte interactive qui vous permettra de trouver le club le plus proche de chez vous !</p>
         </div>
         <div class="col-12 col-lg-8 d-flex justify-content-center">
-            <img src="img/carte.jpg" alt="Carte interactive des clubs" class="rounded img-fluid img-carte">
+            <img src="img/carte.PNG" alt="Carte interactive des clubs" class="rounded img-fluid img-carte">
         </div>
     </div>
     <div class="p-5 text-light d-flex flex-column align-items-center text-center">
@@ -91,3 +84,40 @@
 
     <!-- fin lieux -->
 </div>
+
+  <!-- script card athléte -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const cards = document.querySelectorAll('.card');
+    
+      cards.forEach(card => {
+        let mouseX = 0, mouseY = 0;
+        const width = card.offsetWidth;
+        const height = card.offsetHeight;
+    
+        card.addEventListener('mousemove', function(e) {
+          mouseX = e.pageX - card.offsetLeft - width / 2;
+          mouseY = e.pageY - card.offsetTop - height / 2;
+    
+          const mousePX = mouseX / width;
+          const mousePY = mouseY / height;
+    
+          const rX = mousePX * 30;
+          const rY = mousePY * -30;
+    
+          card.style.transform = `rotateY(${rX}deg) rotateX(${rY}deg)`;
+        });
+    
+        card.addEventListener('mouseenter', function() {
+          clearTimeout(card.mouseLeaveDelay);
+        });
+    
+        card.addEventListener('mouseleave', function() {
+          card.mouseLeaveDelay = setTimeout(() => {
+            card.style.transform = '';
+          }, 1000);
+        });
+      });
+    });
+    
+    </script>

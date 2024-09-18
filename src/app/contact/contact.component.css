@@ -370,3 +370,17 @@ a:hover, a:focus, a:active {
 .lieu {
   color: white !important;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 30%;
+  width: 30%;
+}
+
+.carousel-control-prev {
+  left: 400px;
+}
+
+.carousel-control-next {
+  right: 400px;
+}

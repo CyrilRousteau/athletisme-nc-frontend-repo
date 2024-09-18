@@ -11,43 +11,6 @@
 <body>
   <app-root></app-root>
 
-  <!-- script card athléte -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const cards = document.querySelectorAll('.card');
-  
-    cards.forEach(card => {
-      let mouseX = 0, mouseY = 0;
-      const width = card.offsetWidth;
-      const height = card.offsetHeight;
-  
-      card.addEventListener('mousemove', function(e) {
-        mouseX = e.pageX - card.offsetLeft - width / 2;
-        mouseY = e.pageY - card.offsetTop - height / 2;
-  
-        const mousePX = mouseX / width;
-        const mousePY = mouseY / height;
-  
-        const rX = mousePX * 30;
-        const rY = mousePY * -30;
-  
-        card.style.transform = `rotateY(${rX}deg) rotateX(${rY}deg)`;
-      });
-  
-      card.addEventListener('mouseenter', function() {
-        clearTimeout(card.mouseLeaveDelay);
-      });
-  
-      card.addEventListener('mouseleave', function() {
-        card.mouseLeaveDelay = setTimeout(() => {
-          card.style.transform = '';
-        }, 1000);
-      });
-    });
-  });
-  
-  </script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
