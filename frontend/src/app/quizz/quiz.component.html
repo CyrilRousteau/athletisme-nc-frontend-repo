@@ -1,19 +1,19 @@
 <h1>{{ quiz?.title }}</h1>
 
-<div id="progress-bar-container">
+<div id="progress-bar-container" *ngIf="!showResults">
   <div id="progress-bar" [style.width]="getProgressBarWidth()"></div>
 </div>
 
-<div *ngIf="!showResults; else resultsTemplate">
-  <div class="question">{{ currentQuestionIndex + 1 }}/{{ quiz!.questions.length }} {{ quiz!.questions[currentQuestionIndex].question }}</div>
-  
+<div *ngIf="!showResults">
+  <div class="question">{{ currentQuestionIndex + 1 }}/{{ quiz!.questions.length }} {{
+    quiz!.questions[currentQuestionIndex].question }}</div>
+
   <div class="answers">
-    <div *ngFor="let answer of quiz!.questions[currentQuestionIndex].answers | keyvalue"
-         class="answer-option"
-         [class.selected]="selectedAnswer === answer.key"
-         [class.correct]="showFeedback && quiz!.questions[currentQuestionIndex].correctAnswer === answer.key"
-         [class.wrong]="showFeedback && selectedAnswer === answer.key && quiz!.questions[currentQuestionIndex].correctAnswer !== answer.key"
-         (click)="selectAnswer(answer.key)">
+    <div *ngFor="let answer of quiz!.questions[currentQuestionIndex].answers | keyvalue" class="answer-option"
+      [class.selected]="selectedAnswer === answer.key"
+      [class.correct]="showFeedback && quiz!.questions[currentQuestionIndex].correctAnswer === answer.key"
+      [class.wrong]="showFeedback && selectedAnswer === answer.key && quiz!.questions[currentQuestionIndex].correctAnswer !== answer.key"
+      (click)="selectAnswer(answer.key)">
       <ng-container *ngIf="isString(answer.value); else imageAnswer">
         {{ answer.value }}
       </ng-container>
@@ -22,17 +22,23 @@
       </ng-template>
     </div>
   </div>
-  
-  <button (click)="validateAnswer()" [disabled]="!selectedAnswer">Valider</button>
+
+  <button id="validate" (click)="validateAnswer()" [disabled]="!selectedAnswer">Valider</button>
 
   <div class="feedback" *ngIf="showFeedback">
     <img [src]="quiz!.questions[currentQuestionIndex].imageUrl" alt="Feedback Image">
-    <button (click)="nextQuestion()">Suivant</button>
+    <button id="next" (click)="nextQuestion()">Suivant</button>
   </div>
 </div>
 
-<ng-template #resultsTemplate>
-  <div class="results">
-    <p>{{ numCorrect }} réponse correcte sur {{ quiz!.questions.length }}.</p>
-  </div>
-</ng-template>
+<div *ngIf="showResults" class="resultats">
+  <h2>Résultats du Quiz</h2>
+  <p>Vous avez obtenu {{ numCorrect }} réponse{{ numCorrect > 1 ? 's' : '' }} correcte{{ numCorrect > 1 ? 's' : '' }}
+    sur {{ quiz!.questions.length }}.</p>
+  <button *ngIf="!isLastQuiz" (click)="continueToNextGame()">Passer au jeu suivant</button>
+  <button *ngIf="isLastQuiz" (click)="viewScores()">Voir mes scores</button>
+
+  <app-congratulations-modal *ngIf="showCongratulationsModal" [playerName]="playerName" [totalScore]="totalScore"
+    (restartGame)="restartGame()">
+  </app-congratulations-modal>
+</div>

@@ -1,6 +1,7 @@
 <div class="game-container">
 
-  <app-inscription-modal *ngIf="!hidePseudo" (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
+  <app-inscription-modal *ngIf="!hidePseudo"
+    (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
 
   <p *ngIf="welcomeMessage && !hidePseudo">{{ welcomeMessage }}</p>
 
@@ -21,10 +22,9 @@
   </div>
 
   <div *ngIf="showQuiz">
-    <app-quiz 
-    [quizIndex]="currentQuizIndex" 
-    (quizCompleted)="onQuizCompleted($event)">
-  </app-quiz>
+    <app-quiz [quizIndex]="currentQuizIndex" [isLastQuiz]="currentQuizIndex === quizIds.length - 1"
+      [joueurId]="joueurId" (quizCompleted)="onQuizCompleted($event)" (readyForNextGame)="onReadyForNextGame()">
+    </app-quiz>
   </div>
 
   <div *ngIf="showSecondGame" class="iframe-container">

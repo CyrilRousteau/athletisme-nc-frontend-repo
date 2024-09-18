@@ -30,8 +30,21 @@ const getScoreById = async (id) => {
   }
 };
 
+const getScoresByPlayerId = async (playerId) => {
+  try {
+    const scores = await Score.findAll({
+      where: { joueur_id: playerId }
+    });
+    return scores;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+
 module.exports = {
   createScore,
   getAllScores,
-  getScoreById
+  getScoreById,
+  getScoresByPlayerId
 };

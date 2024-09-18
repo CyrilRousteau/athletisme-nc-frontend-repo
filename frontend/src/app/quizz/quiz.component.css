@@ -323,12 +323,25 @@ body {
     justify-content: center;
     align-items: center;
 }
-.resultats{
+.resultats {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-}
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .resultats h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #8c0e2c;
+  }
+  
+  .resultats p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
 #results-container {
     display: none;
     text-align: center;

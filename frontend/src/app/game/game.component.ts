@@ -35,7 +35,7 @@ export class GameComponent implements OnInit {
   private thirdGameUrl = 'https://lancerdepoids.netlify.app/'; // Assurez-vous que cette URL est correcte
   private fourthGameUrl = 'https://lancerdepoids.netlify.app/';
   private gameIds = [1, 2, 3, 4];
-  private quizIds = [5, 6, 7, 8];  // Assurez-vous que cette URL est correcte
+  public quizIds = [5, 6, 7, 8];  // Assurez-vous que cette URL est correcte
 
   constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
     this.safeGameUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.gameUrl);
@@ -49,16 +49,13 @@ export class GameComponent implements OnInit {
   }
 
   onInscriptionSuccess(joueur: any) {
-    console.log('Joueur inscrit:', joueur); // Ajoutez ce log pour vérifier la structure de l'objet joueur
     this.welcomeMessage = `Bonjour ${joueur.pseudo} ! Appuie sur "Jouer" pour commencer une partie.`;
-    this.joueurId = joueur.id; // Assurez-vous que joueur contient l'identifiant du joueur
+    this.joueurId = joueur.id;
   }
-
 
   startGame() {
     this.showGame = true;
     this.hidePseudo = true;
-    console.log('Le jeu va se lancer...');
   }
 
   getJeuId() {
@@ -87,127 +84,101 @@ export class GameComponent implements OnInit {
     }
 
     return null;
-}
-
+  }
 
   nextGameOrQuiz(): void {
-    console.log("nextGameOrQuiz appelé");
-    console.log("currentQuizIndex:", this.currentQuizIndex);
-  
     if (this.showGame) {
-      console.log("Le jeu est en cours, on va lancer le quiz");
       this.showGame = false;
       this.startQuiz(); // Démarrer le quiz suivant après le jeu
     } else if (this.showQuiz) {
-      console.log("Le quiz est en cours, on va passer au jeu suivant");
       this.showQuiz = false;
       this.currentQuizIndex++; // Incrémenter l'index du quiz après chaque quiz terminé
-      console.log("currentQuizIndex après incrémentation:", this.currentQuizIndex);
-  
       if (this.currentQuizIndex < this.quizIds.length) {
         this.startNextGame(); // Démarrer le prochain jeu après le quiz
       } else {
         console.log("Tous les quiz sont terminés");
       }
     } else if (this.showSecondGame) {
-      console.log("Le deuxième jeu est en cours, on va lancer le deuxième quiz");
       this.showSecondGame = false;
       this.startQuiz(); // Démarrer le deuxième quiz après le deuxième jeu
     } else if (this.showThirdGame) {
-      console.log("Le troisième jeu est en cours, on va lancer le troisième quiz");
       this.showThirdGame = false;
       this.startQuiz(); // Démarrer le troisième quiz après le troisième jeu
     } else if (this.showFourthGame) {
-      console.log("Le quatrième jeu est en cours, on va lancer le quatrième quiz");
       this.showFourthGame = false;
       this.startQuiz(); // Démarrer le quatrième quiz après le quatrième jeu
     }
   }
-  
-  
-  
 
-submitScore() {
-  if (this.score !== null && this.joueurId !== null) {
-    const jeuId = this.getJeuId();
-    const scoreData = {
-      joueur_id: this.joueurId,
-      jeu_id: jeuId,
-      valeur: this.score,
-      date: new Date().toISOString()
-    };
+  submitScore() {
+    if (this.score !== null && this.joueurId !== null) {
+      const jeuId = this.getJeuId();
+      const scoreData = {
+        joueur_id: this.joueurId,
+        jeu_id: jeuId,
+        valeur: this.score,
+        date: new Date().toISOString()
+      };
 
-    console.log('Données envoyées:', scoreData);
-
-    this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
-      (response: any) => {
-        console.log('Score enregistré:', response);
-        this.score = null; // Réinitialiser le score après la soumission
-        this.startQuiz(); // Démarrer le quiz après la soumission du score
-      },
-      (error: any) => {
-        console.error('Erreur lors de l\'enregistrement du score:', error);
-      }
-    );
+      this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
+        (response: any) => {
+          this.score = null; // Réinitialiser le score après la soumission
+          this.startQuiz(); // Démarrer le quiz après la soumission du score
+        },
+        (error: any) => {
+          console.error('Erreur lors de l\'enregistrement du score:', error);
+        }
+      );
+    }
   }
-}
 
-onQuizCompleted(numCorrect: number): void {
-  this.numCorrect = numCorrect;  // Met à jour la variable numCorrect avec le score du quiz
-  this.submitQuizScore();        // Appelle la méthode pour enregistrer le score
-  this.nextGameOrQuiz();         // Passe au jeu ou quiz suivant
-}
-
-submitQuizScore(): void {
-  const joueurId = this.joueurId; // Récupère l'ID du joueur
-  const jeuId = this.getJeuId();  // Récupère l'ID du jeu (qui peut être un quiz)
-  
-  if (this.numCorrect !== null && joueurId !== null) {
-    const scoreData = {
-      joueur_id: joueurId,
-      jeu_id: jeuId,  // L'ID du quiz dans ta table "jeux"
-      valeur: this.numCorrect,  // Le score est le nombre de réponses correctes
-      date: new Date().toISOString()
-    };
-
-    console.log('Envoi des données de score pour le quiz:', scoreData);
-
-    this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
-      (response: any) => {
-        console.log('Score de quiz enregistré avec succès:', response);
-      },
-      (error: any) => {
-        console.error('Erreur lors de l\'enregistrement du score de quiz:', error);
-      }
-    );
+  onQuizCompleted(numCorrect: number): void {
+    this.numCorrect = numCorrect;  // Met à jour la variable numCorrect avec le score du quiz
+    this.submitQuizScore();        // Appelle la méthode pour enregistrer le score        // Passe au jeu ou quiz suivant
   }
-}
 
-startQuiz(): void {
-  console.log("Démarrage du quiz avec l'index", this.currentQuizIndex);
-  this.showQuiz = true;
-  this.showGame = false; // Cacher le jeu en cours
-  // Ne réinitialise pas currentQuizIndex ici
-}
-
-
-
-startNextGame(): void {
-  console.log("Démarrage du jeu après le quiz avec currentQuizIndex:", this.currentQuizIndex);
-
-  if (this.currentQuizIndex === 1) {
-    console.log("Affichage du deuxième jeu");
-    this.showSecondGame = true;
-  } else if (this.currentQuizIndex === 2) {
-    console.log("Affichage du troisième jeu");
-    this.showThirdGame = true;
-  } else if (this.currentQuizIndex === 3) {
-    console.log("Affichage du quatrième jeu");
-    this.showFourthGame = true;
-  } else {
-    console.log("Tous les jeux sont terminés.");
+  onReadyForNextGame(): void {
+    this.nextGameOrQuiz();         // Passe au jeu ou quiz suivant
   }
-}
 
+  submitQuizScore(): void {
+    const joueurId = this.joueurId; // Récupère l'ID du joueur
+    const jeuId = this.getJeuId();  // Récupère l'ID du jeu (qui peut être un quiz)
 
+    if (this.numCorrect !== null && joueurId !== null) {
+      const scoreValue = this.numCorrect * 20; // Multiplie le score par 20
+      const scoreData = {
+        joueur_id: joueurId,
+        jeu_id: jeuId,  // L'ID du quiz dans ta table "jeux"
+        valeur: scoreValue,  // Le score est le nombre de réponses correctes multiplié par 20
+        date: new Date().toISOString()
+      };
+
+      this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
+        (response: any) => {
+          console.log('Score de quiz enregistré avec succès:', response);
+        },
+        (error: any) => {
+          console.error('Erreur lors de l\'enregistrement du score de quiz:', error);
+        }
+      );
+    }
+  }
+
+  startQuiz(): void {
+    this.showQuiz = true;
+    this.showGame = false; // Cacher le jeu en cours
+  }
+
+  startNextGame(): void {
+    if (this.currentQuizIndex === 1) {
+      this.showSecondGame = true;
+    } else if (this.currentQuizIndex === 2) {
+      this.showThirdGame = true;
+    } else if (this.currentQuizIndex === 3) {
+      this.showFourthGame = true;
+    } else {
+      console.log("Tous les jeux sont terminés.");
+    }
+  }
 }

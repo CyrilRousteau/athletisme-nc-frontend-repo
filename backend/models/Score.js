@@ -22,7 +22,6 @@ const Score = sequelize.define('Score', {
   tableName: 'Scores'
 });
 
-// Définir les associations dans une fonction séparée
 Score.associate = (models) => {
   Score.belongsTo(models.Joueur, { foreignKey: 'joueur_id' });
   Score.belongsTo(models.Jeux, { foreignKey: 'jeu_id' });

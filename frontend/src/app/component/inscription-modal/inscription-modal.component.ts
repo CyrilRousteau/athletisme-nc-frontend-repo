@@ -20,10 +20,9 @@ export class InscriptionModalComponent {
     email: ''
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   openModal() {
-    console.log('Ouverture de la modale d\'inscription');
     this.showModal = true;
   }
 
@@ -41,12 +40,10 @@ export class InscriptionModalComponent {
       this.http.post('http://localhost:3001/api/joueurs', this.joueur)
         .subscribe({
           next: (response: any) => {
-            console.log('Inscription réussie', response);
             this.closeModalHandler();
             this.inscriptionSuccess.emit(response); // Émettre l'événement avec l'objet joueur
           },
           error: (error: any) => {
-            console.error('Erreur lors de l\'inscription', error);
             // Gérer l'erreur (par exemple, afficher un message à l'utilisateur)
           }
         });
