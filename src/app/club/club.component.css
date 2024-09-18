@@ -1,0 +1,94 @@
+
+
+.bg-img1  {
+    background-image: url("../../../public/img/ligne.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
+
+.bg-img2  {
+    background-image: url("../../../public/img/club.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
+
+.bg-white {
+    background-color: white;
+    padding: 50px;
+}
+
+.bg-black {
+    background-color: black;
+    padding: 50px;
+}
+
+p {
+    color : white;
+}
+
+span {
+    color : white;
+}
+
+.img{
+    width: 60%;
+}
+
+
+.col {
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contact-pic {
+    width: 150px;
+    border-radius: 100%;
+}
+
+.font{
+    font-family: 'StretchPro';
+    color: white;
+}
+
+h1 {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+.texte{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.titre{
+    color: #ffffff;
+    padding: 10px;
+}
+.div-left{
+    padding-left: 3%;
+}
+
+.licence {
+    background-color: #910303;
+    border-radius: 30px;
+    color: white !important;
+    text-decoration: none;
+    padding: 1%;
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
+    align-content: center;
+    
+  }
+  
+  .licence:hover {
+    background-color: #561717; 
+  }
