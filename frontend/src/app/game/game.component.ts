@@ -5,6 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { QuizComponent } from '../quizz/quiz.component';
+import { ScoreService } from '../score/score.service';
 
 @Component({
   selector: 'app-game',
@@ -29,6 +30,9 @@ export class GameComponent implements OnInit {
   numCorrect: number = 0;
   showQuiz: boolean = false;
   currentQuizIndex: number = 0;
+  topScores: any[] = [];
+  showWarning = false;
+  isValidScore = false;
 
   private gameUrl = 'https://lancerdepoids.netlify.app/';
   private secondGameUrl = 'https://lancerdepoids.netlify.app/'; // Assurez-vous que cette URL est correcte
@@ -37,7 +41,7 @@ export class GameComponent implements OnInit {
   private gameIds = [1, 2, 3, 4];
   public quizIds = [5, 6, 7, 8];  // Assurez-vous que cette URL est correcte
 
-  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
+  constructor(private sanitizer: DomSanitizer, private http: HttpClient, private scoreService: ScoreService) {
     this.safeGameUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.gameUrl);
     this.safeSecondGameUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.secondGameUrl);
     this.safeThirdGameUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.thirdGameUrl);
@@ -45,7 +49,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Initialisation si nécessaire
+    this.loadTopScores();
   }
 
   onInscriptionSuccess(joueur: any) {
@@ -111,7 +115,7 @@ export class GameComponent implements OnInit {
   }
 
   submitScore() {
-    if (this.score !== null && this.joueurId !== null) {
+    if (this.score !== null && this.joueurId !== null && this.isValidScore) {
       const jeuId = this.getJeuId();
       const scoreData = {
         joueur_id: this.joueurId,
@@ -179,6 +183,29 @@ export class GameComponent implements OnInit {
       this.showFourthGame = true;
     } else {
       console.log("Tous les jeux sont terminés.");
+    }
+  }
+
+  
+  loadTopScores(): void {
+    this.scoreService.getAllScores().subscribe(
+      (scores: any[]) => {
+        this.topScores = scores;
+        console.log('Scores récupérés avec joueurs:', this.topScores); // Vérifie que les joueurs sont bien inclus
+      },
+      (error: any) => {
+        console.error('Erreur lors de la récupération des scores:', error);
+      }
+    );
+  }
+
+  validateScore() {
+    if (this.score !== null) {
+      this.isValidScore = this.score >= 0 && this.score <= 100;
+      this.showWarning = this.score > 100;
+    } else {
+      this.isValidScore = false;
+      this.showWarning = false;
     }
   }
 }

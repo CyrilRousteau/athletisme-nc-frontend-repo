@@ -6,11 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ScoreService {
-  private apiUrl = 'http://localhost:3001/api/scores/player';
+  private apiUrl = 'http://localhost:3001/api/scores';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getScoresByPlayerId(playerId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/${playerId}`);
+    return this.http.get<any[]>(`${this.apiUrl}/player/${playerId}`);
+  }
+
+  getTopScores(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/top`);
+  }
+
+  getAllScores(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

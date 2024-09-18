@@ -1,5 +1,15 @@
 <div class="game-container">
 
+  <div *ngIf="topScores.length > 0">
+    <h2>Top 3 Scores</h2>
+    <ul>
+      <li *ngFor="let score of topScores | slice:0:3">
+        {{ score.valeur }} : {{ score.joueur_id }}
+      </li>
+    </ul>
+  </div>
+  
+
   <app-inscription-modal *ngIf="!hidePseudo"
     (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
 
@@ -16,10 +26,20 @@
   </div>
 
   <div *ngIf="showGame">
-    <h2>J'inscris mon score</h2>
-    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
-    <button (click)="submitScore()">OK</button>
+    <label for="scoreInput">J'inscris mon 1 er score : </label>
+    <input
+      id="scoreInput"
+      type="number"
+      [(ngModel)]="score"
+      (ngModelChange)="validateScore()"
+      [maxlength]="3"
+    >
+    <button (click)="submitScore()" [disabled]="!isValidScore">OK</button>
+    <p *ngIf="showWarning" style="color: red;">
+      Êtes-vous sûr ? Le score ne doit pas dépasser le chiffre 100.
+    </p>
   </div>
+  
 
   <div *ngIf="showQuiz">
     <app-quiz [quizIndex]="currentQuizIndex" [isLastQuiz]="currentQuizIndex === quizIds.length - 1"
@@ -32,9 +52,18 @@
   </div>
 
   <div *ngIf="showSecondGame">
-    <h2>J'inscris mon score2</h2>
-    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
-    <button (click)="submitScore()">OK</button>
+    <label for="scoreInput">J'inscris mon 2 ème score : </label>
+    <input
+      id="scoreInput"
+      type="number"
+      [(ngModel)]="score"
+      (ngModelChange)="validateScore()"
+      [maxlength]="3"
+    >
+    <button (click)="submitScore()" [disabled]="!isValidScore">OK</button>
+    <p *ngIf="showWarning" style="color: red;">
+      Êtes-vous sûr ? Le score ne doit pas dépasser le chiffre 100.
+    </p>
   </div>
 
   <div *ngIf="showThirdGame" class="iframe-container">
@@ -42,9 +71,18 @@
   </div>
 
   <div *ngIf="showThirdGame">
-    <h2>J'inscris mon score3</h2>
-    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
-    <button (click)="submitScore()">OK</button>
+    <label for="scoreInput">J'inscris mon 3 ème score : </label>
+    <input
+      id="scoreInput"
+      type="number"
+      [(ngModel)]="score"
+      (ngModelChange)="validateScore()"
+      [maxlength]="3"
+    >
+    <button (click)="submitScore()" [disabled]="!isValidScore">OK</button>
+    <p *ngIf="showWarning" style="color: red;">
+      Êtes-vous sûr ? Le score ne doit pas dépasser le chiffre 100.
+    </p>
   </div>
 
   <div *ngIf="showFourthGame" class="iframe-container">
@@ -52,8 +90,16 @@
   </div>
 
   <div *ngIf="showFourthGame">
-    <h2>J'inscris mon score4</h2>
-    <input type="number" [(ngModel)]="score" placeholder="Entrez votre score">
-    <button (click)="submitScore()">OK</button>
-  </div>
+    <label for="scoreInput">J'inscris mon 4 ème score : </label>
+    <input
+      id="scoreInput"
+      type="number"
+      [(ngModel)]="score"
+      (ngModelChange)="validateScore()"
+      [maxlength]="3"
+    >
+    <button (click)="submitScore()" [disabled]="!isValidScore">OK</button>
+    <p *ngIf="showWarning" style="color: red;">
+      Êtes-vous sûr ? Le score ne doit pas dépasser le chiffre 100.
+    </p>
 </div>

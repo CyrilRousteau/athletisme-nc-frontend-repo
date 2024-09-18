@@ -36,9 +36,19 @@ const getScoresByPlayerId = async (req, res) => {
   }
 };
 
+const getTopScores = async (req, res) => {
+  try {
+    const scores = await scoreService.getTopScores();
+    res.status(200).json(scores);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   createScore,
   getAllScores,
   getScoreById,
-  getScoresByPlayerId
+  getScoresByPlayerId,
+  getTopScores
 };

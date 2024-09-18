@@ -41,10 +41,24 @@ const getScoresByPlayerId = async (playerId) => {
   }
 };
 
+const getTopScores = async () => {
+  try {
+    const scores = await Score.findAll({
+      order: [['valeur', 'DESC']],
+      limit: 3,
+      include: [{ model: Joueur, attributes: ['pseudo'] }]
+    });
+    return scores;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
 
 module.exports = {
   createScore,
   getAllScores,
   getScoreById,
-  getScoresByPlayerId
+  getScoresByPlayerId,
+  getTopScores
 };
