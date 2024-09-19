@@ -6,6 +6,7 @@ import { GameComponent } from './game/game.component';
 import { LigueComponent } from './ligue/ligue.component';
 import { RgpdComponent } from './rgpd/rgpd.component';
 import { HomeComponent } from './home/home.component';
+import { ClubComponent } from './club/club.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,6 @@ export const routes: Routes = [
   { path: 'athletisme', component: AthletismeComponent},
   { path: 'game', component: GameComponent },
   { path: 'ligue', component: LigueComponent },
+  { path: 'club', component: ClubComponent },
   { path: 'rgpd', component: RgpdComponent },
-  // Ajoutez d'autres routes ici
 ];

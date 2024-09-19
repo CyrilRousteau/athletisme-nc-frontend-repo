@@ -1,23 +1,32 @@
 <header>
-    <nav class="socialbar d-flex justify-content-end">
-        <ul class="socialbar-menu align-items-center">
-            <li><a href="#dd"><img src="/img/facebook.png" alt="icone facebook"></a></li>
-            <li><a href="#dd"><img src="/img/instagram.png" alt="icone instagram"></a></li>
-            <li><a href="#dd"><img src="/img/linkedin.png" alt="icone linkedin"></a></li>
-            <li><a href="#dd"><img src="/img/youtube.png" alt="icone youtube"></a></li>
-        </ul>
-    </nav>
-    <nav class="navbar col-12 text-uppercase">
-        <img src="/img/logo.png" alt="logo ligue athlétimse NC" class="imgSize col-6">
-        <ul class="navbar-menu d-flex justify-content-end align-items-center col-6">
-            <li><a routerLink="/">Accueil</a></li>
-            <li><a href="/game">Jeux</a></li>
-            <li><a href="/ligue">La ligue</a></li>
-            <li><a routerLink="/contact">Contact</a></li>
-            <li class="adherer"><a routerLink="/athletisme">Adhérer</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg col-12 text-uppercase">
+        <a href="/" class="navbar-brand col-lg-4">
+            <img src="/img/logo.png" alt="logo ligue athlétisme NC" class="imgSize img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse col-lg-8" id="navbarNav">
+            <div class="navbar-menu d-flex justify-content-end align-items-center col-9">
+                <ul class="navbar-nav d-flex flex-row justify-content-end">
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/game">Jeux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ligue">La ligue</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/club">Votre club</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item adherer"><a class="nav-link" href="/athletisme">Adhérer</a></li>
+                </ul>
+            </div>
+            <div class="navbar-nav d-flex flex-row justify-content-end col-3">
+                <li class="nav-item"><a href="https://www.facebook.com/p/Ligue-Nouvelle-Cal%C3%A9donie-Athl%C3%A9tisme-61553746453933/?paipv=0&eav=AfbWZK3SVIkajjfA-cURxexKHNVnz3g54wjtvtbawuYag3BiEfrCNY54ejuHWzfi7r8&_rdr" class="nav-link"><img src="/img/facebook.png" alt="icone facebook" class="social-icon"></a></li>
+                <li class="nav-item"><a href="https://www.instagram.com/ligue_athle_nc/" class="nav-link"><img src="/img/instagram.png" alt="icone instagram" class="social-icon"></a></li>
+                <li class="nav-item"><a href="https://www.youtube.com/@lescagous-nouvelle-caledon5115" class="nav-link"><img src="/img/youtube.png" alt="icone youtube" class="social-icon"></a></li>
+            </div>
+        </div>
     </nav>
 </header>
+
+
 
 <main>
     <router-outlet></router-outlet>
@@ -28,36 +37,37 @@
         <div class="col-8 row">
             <div class="d-flex justify-content-center pb-4"><h4><b>Accès rapide</b></h4></div>
             <div class="col nav-footer text-center">
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Jeux</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/game">Jeux</a></li>
+                <li><a href="/contact">Contact</a></li>
             </div>
             <div class="col nav-footer text-center">
-                <li><a href="">Pratiquer l'athlétimse</a></li>
-                <li><a href="">Choisir ma licence</a></li>
-                <li><a href="">Trouver un club</a></li>
+                <li><a href="/licence#pratiquer">Pratiquer l'athlétimse</a></li>
+                <li><a href="/licence#choisir">Choisir ma licence</a></li>
+                <li><a href="/licence#club">Trouver un club</a></li>
             </div>
             <div class="col nav-footer text-center">
-                <li><a href="">La ligue</a></li>
-                <li><a href="">Web-documentaires</a></li>
-                <li><a href="">Formulaire d'adhésion</a></li>
+                <li><a href="/ligue">La ligue</a></li>
+                <li><a href="/ligue#webdoc">Web-documentaires</a></li>
+                <li><a href="/athletisme#adhesion">Formulaire d'adhésion</a></li>
             </div>
         </div>
         <div class="col-4 border-footer">
             <div class="col p-2">
-                <a href="#dd" class="socialbar-footer"><img src="/img/facebook.png" alt="icone facebook"></a>
-                <a href="#dd" class="socialbar-footer"><img src="/img/instagram.png" alt="icone instagram"></a>
-                <a href="#dd" class="socialbar-footer"><img src="/img/linkedin.png" alt="icone linkedin"></a>
-                <a href="#dd" class="socialbar-footer"><img src="/img/youtube.png" alt="icone youtube"></a>
+                <a href="https://www.facebook.com/p/Ligue-Nouvelle-Cal%C3%A9donie-Athl%C3%A9tisme-61553746453933/?paipv=0&eav=AfbWZK3SVIkajjfA-cURxexKHNVnz3g54wjtvtbawuYag3BiEfrCNY54ejuHWzfi7r8&_rdr" class="socialbar-footer"><img src="/img/facebook.png" alt="icone facebook"></a>
+                <a href="https://www.instagram.com/ligue_athle_nc/" class="socialbar-footer"><img src="/img/instagram.png" alt="icone instagram"></a>
+                <a href="https://www.youtube.com/@lescagous-nouvelle-caledon5115" class="socialbar-footer"><img src="/img/youtube.png" alt="icone youtube"></a>
             </div>
             <div class="col nav-footer">
                 <li><img src="/img/phone.png" alt="icone téléphone" class="icone p-2">+687 96.18.08</li>
-                <li><img src="/img/mail.png" alt="icone mail" class="icone p-2"><a href="">ericreuillard80&#64;gmail.com</a></li>
+                <a href="mailto:ericreuillard80@gmail.com">
+                    <li><img src="/img/mail.png" alt="icone mail" class="icone p-2">ericreuillard80&#64;gmail.com</li>
+                </a>
                 <li><img src="/img/map.png" alt="icone map" class="icone p-2"><a href="">Stade Numa-Daly, 2 Rue Maurice-Herzog </a></li>
             </div>
         </div>
     </div>
     <div class="d-flex align-items-center justify-content-center p-2 sous-footer col-12">
-        <a href="" class="text-decoration-none text-light p-2">Politiques de confidentialité</a>| ©Copyright 2024 SAE athlétimse
+        <a href="" class="text-decoration-none text-light p-2">Politiques de confidentialité</a>| ©Copyright 2024 SAE athlétisme
     </div>
 </footer>

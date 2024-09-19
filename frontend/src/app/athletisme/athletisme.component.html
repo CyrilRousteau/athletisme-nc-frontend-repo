@@ -1,1 +1,77 @@
-<p>athletisme works!</p>
+<div class="text-center bg-img1 padding-nav justify-content-around">
+    <div class="d-flex p-5 justify-content-end">
+        <div class="d-flex flex-column col-5">
+            <h2 class="font">Vous y êtes</h2>
+            <h1 class="font">presque !</h1>
+            <p>Plus qu’une dernière foulée pour devenir licencié au sein de la ligue d’athlétisme.</p>
+        </div>
+    </div>
+</div>
+<div class="text-center align-items-center p-2">
+    <h1 class="font">Les avantages</h1>
+    <div class="d-flex flex-row">
+        <div class="col">
+            <img class="contact-pic" src="img/équipement.jpg" alt="photo Paul POANIEWA">
+            <p class="font">Équipements de qualité</p>
+        </div>
+        <div class="col">
+            <img class="contact-pic" src="img/formation.jpg" alt="photo Paul POANIEWA">
+            <p class="font">Entraînements menés par des professionnels</p>
+        </div>
+        <div class="col">
+            <img class="contact-pic" src="img/trophée.jpg" alt="photo Paul POANIEWA">
+            <p class="font">Partage social (évenements)</p>
+        </div>
+    </div>
+</div>
+<div class="container mt-2 pb-5">
+    <div class="card card-custom">
+        <div class="card-header card-header-custom">
+            Formulaire d'adhésion
+        </div>
+        <div class="card-body card-body-custom">
+            <form>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control form-control-custom" id="nom" placeholder="Entrez votre nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" class="form-control form-control-custom" id="prenom" placeholder="Entrez votre prénom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control form-control-custom" id="email" placeholder="EX : pierre.dupont@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" class="form-control form-control-custom" id="telephone" placeholder="EX : 70.70.70" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="club">Choix du club</label>
+                    <select class="form-control form-control-custom" id="club" required>
+                        <option value="" disabled selected>Sélectionnez un club</option>
+                        <option value="club1">Club 1</option>
+                        <option value="club2">Club 2</option>
+                        <option value="club3">Club 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="licence">Choix de la licence (facultatif)</label>
+                    <select class="form-control form-control-custom" id="licence">
+                        <option value="" selected>Aucune licence</option>
+                        <option value="loisir">Licence Loisir</option>
+                        <option value="competition">Licence Compétition</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-custom justify-content-center">Adhérer</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,123 @@
-<p>ligue works!</p>
+<div class="padding-nav">
+    <!-- début Présentation de la ligue -->
+    <div class="bg-img col-12 bg-color text-light d-flex justify-content-center p-5" id="top">
+        <div class="col-7 d-flex flex-column">
+            <h1 class="font fs-3">PPrésentation de la ligue</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae molestiae est id consequatur, nostrum inventore animi cupiditate? Nam recusandae consequatur accusantium dolorem qui. Officia ratione esse laborum in facilis error.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam vero harum facere adipisci quos rerum quam dolores facilis voluptates, vel nam vitae esse voluptas voluptate voluptatem non, aperiam accusamus sunt?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus voluptates, omnis doloribus est blanditiis id perspiciatis dicta similique aliquam minima dolore dolor. Voluptas vero neque ex quos, pariatur tempore explicabo?
+                La ligue propose différents types de licences pour chacune de vos envies. 
+                Trouvez le club le plus proche de chez vous grâce à notre carte interactive.
+                Devenez adhérents et accédez à de nombreux avantages.
+            </p>
+        </div>
+    </div>
+    
+    <!-- fin Présentation de la ligue -->
+
+    <!-- début webdoc -->
+
+    <div class=" bg-img-ligue">
+        <div class="container py-5">
+            <h1 class="text-center mb-4 font fs-3 fs-lg-1">NNos Webdocumentaires : <br>“À Vos Marques”</h1>
+            <div class="row">
+              <div class="col-md-6 mb-4 text-light">
+                <p class="text-center">“À vos marques : Loan VILLE, à la pointe de la performance”</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=dnuvb91EH-ZL5Are" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="text-center">Partez à la rencontre de la jeune athlète prodige du 400m haies Loan VILLE pour une journée complète !</p>
+              </div>
+              <div class="col-md-6 mb-4 text-light">
+                <p class="text-center"><b>“À vos marques : Athlète, quel est ton rêve ?”</b></p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/mEfVm8KEZIk?si=EVWKHEiyXUACc78Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="text-center">Rêvez aussi grand que les jeunes espoirs du caillou à travers ce documentaire !</p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+   
+    <!-- fin webdoc -->
+
+    <!-- début cartes athletes -->
+    <div class=" bg-img-ligue">
+        <div class="container py-5">
+            <h1 class="text-center mb-4 font fs-3 fs-lg-1">CCartes Des Athlètes</h1>
+            <div id="app" class="container">
+                <div class="card" style="background-image: url('/img/marchand.jpg')">
+                  <h1>Loan VILLE</h1>
+                  <p>400m haies</p>
+                </div>
+                <div class="card" style="background-image: url('/img/marchand.jpg');">
+                  <h1>Beaches</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="card" style="background-image: url('/img/marchand.jpg');">
+                  <h1>Trees</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="card" style="background-image: url('/img/marchand.jpg');">
+                  <h1>Lakes</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    <!-- fin cartes athletes -->
+
+    <!-- début lieux -->
+    <div class="bg-color">
+    <div class="d-flex align-items-center p-5 flex-column flex-lg-row grid-carte">
+        <div class="d-flex flex-column text-light col-12 col-lg-4 mb-4 mb-lg-0">
+            <p>Envie de vous intéresser aux différents clubs qui composent notre ligue d’athlétisme ?</p>
+            <p>Voici une carte interactive qui vous permettra de trouver le club le plus proche de chez vous !</p>
+        </div>
+        <div class="col-12 col-lg-8 d-flex justify-content-center">
+            <img src="img/carte.PNG" alt="Carte interactive des clubs" class="rounded img-fluid img-carte">
+        </div>
+    </div>
+    <div class="p-5 text-light d-flex flex-column align-items-center text-center">
+        <p>Retrouvez également toutes les informations utiles pour pratiquer l’athlétisme (les avantages, les licences, etc...)</p>
+        <a href="/licence" class="btn licence-acc font mt-3">LES LICENCES</a>
+    </div>
+</div>
+
+    <!-- fin lieux -->
+</div>
+
+  <!-- script card athléte -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const cards = document.querySelectorAll('.card');
+    
+      cards.forEach(card => {
+        let mouseX = 0, mouseY = 0;
+        const width = card.offsetWidth;
+        const height = card.offsetHeight;
+    
+        card.addEventListener('mousemove', function(e) {
+          mouseX = e.pageX - card.offsetLeft - width / 2;
+          mouseY = e.pageY - card.offsetTop - height / 2;
+    
+          const mousePX = mouseX / width;
+          const mousePY = mouseY / height;
+    
+          const rX = mousePX * 30;
+          const rY = mousePY * -30;
+    
+          card.style.transform = `rotateY(${rX}deg) rotateX(${rY}deg)`;
+        });
+    
+        card.addEventListener('mouseenter', function() {
+          clearTimeout(card.mouseLeaveDelay);
+        });
+    
+        card.addEventListener('mouseleave', function() {
+          card.mouseLeaveDelay = setTimeout(() => {
+            card.style.transform = '';
+          }, 1000);
+        });
+      });
+    });
+    
+    </script>
