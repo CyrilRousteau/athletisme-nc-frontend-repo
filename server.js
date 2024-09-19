@@ -12,7 +12,6 @@ const JeuxRoutes = require('./backend/routes/JeuxRoutes');
 const PartieRoutes = require('./backend/routes/PartieRoutes');
 const ScoreRoutes = require('./backend/routes/ScoreRoutes');
 const ProfilRoutes = require('./backend/routes/ProfilRoutes');
-const QuizzScoreRoutes = require('./backend/routes/QuizzScoreRoutes');
 
 const app = express();
 const server = http.createServer(app);
@@ -29,7 +28,6 @@ app.use('/api', JeuxRoutes);
 app.use('/api', PartieRoutes);
 app.use('/api', ScoreRoutes);
 app.use('/api', ProfilRoutes);
-app.use('/api', QuizzScoreRoutes);
 
 // Configurer Socket.io
 configureSocketIo(io);

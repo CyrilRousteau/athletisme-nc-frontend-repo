@@ -4,7 +4,7 @@
     <h2>Top 3 Scores</h2>
     <ul>
       <li *ngFor="let score of topScores | slice:0:3">
-        {{ score.valeur }} : {{ score.joueur_id }}
+        {{ score.valeur }} : {{ score.joueur_id || 'Joueur inconnu' }}
       </li>
     </ul>
   </div>

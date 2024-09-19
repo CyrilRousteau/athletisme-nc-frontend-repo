@@ -1,4 +1,5 @@
 const Score = require('../models/Score');
+const Joueur = require('../models/Joueur');
 
 const createScore = async (scoreData) => {
   try {
@@ -46,13 +47,16 @@ const getTopScores = async () => {
     const scores = await Score.findAll({
       order: [['valeur', 'DESC']],
       limit: 3,
-      include: [{ model: Joueur, attributes: ['pseudo'] }]
+      // include: [{ model: Joueur, attributes: ['pseudo']}], // Ensure Score has association with Joueur
     });
     return scores;
   } catch (error) {
-    throw new Error(error.message);
+    console.error('Erreur lors de la récupération des scores :', error);
+    throw error; // Il est généralement préférable de propager l'erreur originale
   }
 };
+
+
 
 
 module.exports = {

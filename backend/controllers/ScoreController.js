@@ -41,9 +41,11 @@ const getTopScores = async (req, res) => {
     const scores = await scoreService.getTopScores();
     res.status(200).json(scores);
   } catch (error) {
+    console.error('Erreur lors de la récupération des scores :', error);
     res.status(500).json({ error: error.message });
   }
 };
+
 
 module.exports = {
   createScore,

@@ -188,7 +188,7 @@ export class GameComponent implements OnInit {
 
   
   loadTopScores(): void {
-    this.scoreService.getAllScores().subscribe(
+    this.scoreService.getTopScores().subscribe(
       (scores: any[]) => {
         this.topScores = scores;
         console.log('Scores récupérés avec joueurs:', this.topScores); // Vérifie que les joueurs sont bien inclus
