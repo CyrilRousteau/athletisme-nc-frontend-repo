@@ -1,0 +1,19 @@
+<button (click)="openModal()">Je m'inscris pour jouer</button>
+
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModalHandler()">&times;</span>
+    <h2>Inscription</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="pseudo">Pseudo *</label>
+        <input type="text" id="pseudo" [(ngModel)]="joueur.pseudo" name="pseudo" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="joueur.email" name="email">
+      </div>
+      <button type="submit" [disabled]="!isFormValid()">Je m'inscris</button>
+    </form>
+  </div>
+</div>

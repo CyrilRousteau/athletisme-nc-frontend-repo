@@ -1,6 +1,27 @@
-# Site
+# SAE-athl-
 
+## Description
+
+Projet de site web pour l'athlétisme en Nouvelle-Calédonie. Le site inclut une page d'accueil, des pages pour les athlètes, les jeux, les résultats, etc. Le backend est construit avec Node.js et Express, tandis que le frontend utilise Angular 18.
+
+### Cloner le Dépôt
+
+```bash
+git clone https://github.com/votre-nom-utilisateur/SAE-athl-.git
+cd SAE-athl-
+
+## Prérequis
+
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
+- [SQLite](https://www.sqlite.org/)
+
+## Installation
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+
+##  Lancer le Serveur : Les commandes pour démarrer le serveur
+
+Run `npm run start-server`
 
 ## Development server
 
