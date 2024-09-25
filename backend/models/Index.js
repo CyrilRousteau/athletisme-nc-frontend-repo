@@ -21,14 +21,15 @@ const Joueur = require(path.join(modelsDirectory, 'joueur'))(sequelize, Sequeliz
 const Score = require(path.join(modelsDirectory, 'score'))(sequelize, Sequelize.DataTypes);
 const Jeux = require(path.join(modelsDirectory, 'jeux'))(sequelize, Sequelize.DataTypes);
 
-db.Joueur = Joueur;
-db.Score = Score;
-db.Jeux = Jeux;
 
 // Définir explicitement les associations
 Joueur.associate(db);
 Score.associate(db);
 Jeux.associate(db);
+// Vérifie les associations
+console.log('Associations pour Joueur :', db.Joueur.associations);
+console.log('Associations pour Score :', db.Score.associations);
+
 
 // Si vous souhaitez toujours charger dynamiquement les autres modèles (s'il y en a)
 fs
@@ -50,12 +51,14 @@ fs
 sequelize.sync({ alter: true }) // Utilise `alter: true` pour mettre à jour les tables si nécessaire
   .then(() => {
     console.log('Base de données synchronisée.');
+    console.log(db.Joueur.associations);
+    console.log(db.Score.associations);
+
   })
   .catch((error) => {
     console.error('Erreur lors de la synchronisation de la base de données :', error);
   });
 
-db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;

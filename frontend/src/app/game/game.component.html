@@ -1,9 +1,9 @@
 <div class="game-container">
-  <div *ngIf="topScores.length > 0">
+  <div class="score-container" *ngIf="topScores.length > 0">
     <h2>Top 3 Scores</h2>
     <ul>
       <li *ngFor="let score of topScores | slice:0:3">
-        {{ score.valeur }} : {{ score.joueur?.pseudo || 'Joueur inconnu' }}
+        {{ score.valeur }} : {{ score.joueur?.pseudo|| 'Joueur inconnu' }}
       </li>
     </ul>
   </div>

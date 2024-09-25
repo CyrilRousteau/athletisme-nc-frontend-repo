@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
         title: 'Lancer de poids'
       },
       { 
-        url: this.sanitizer.bypassSecurityTrustResourceUrl('https://lancerdepoids.netlify.app/'),
+        url: this.sanitizer.bypassSecurityTrustResourceUrl('https://main--100matheltisme.netlify.app/'),
         title: 'Course du 100 m'
       },
       { 
