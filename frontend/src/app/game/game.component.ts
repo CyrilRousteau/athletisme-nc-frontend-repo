@@ -47,10 +47,6 @@ export class GameComponent implements OnInit {
       { 
         url: this.sanitizer.bypassSecurityTrustResourceUrl('https://lancerdepoids.netlify.app/'),
         title: 'Saut à la perche'
-      },
-      { 
-        url: this.sanitizer.bypassSecurityTrustResourceUrl('https://lancerdepoids.netlify.app/'),
-        title: 'Course 100 m haie'
       }
     ];
   }
@@ -60,7 +56,7 @@ export class GameComponent implements OnInit {
   }
 
   onInscriptionSuccess(joueur: any) {
-    this.welcomeMessage = `Bonjour ${joueur.pseudo} ! Appuie sur "Jouer" pour commencer une partie.`;
+    this.welcomeMessage = `Bonjour ${joueur.pseudo} ! Click sur "Jouer" pour commencer une partie.`;
     this.joueurId = joueur.id;
   }
 

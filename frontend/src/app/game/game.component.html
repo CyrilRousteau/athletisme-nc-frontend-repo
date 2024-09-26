@@ -1,4 +1,5 @@
-<div class="game-container">
+<div class=" padding-nav">
+  <div class="game-container">
   <div class="score-container" *ngIf="topScores.length > 0">
     <h2>Top 3 Scores</h2>
     <ul>
@@ -12,18 +13,18 @@
     <app-inscription-modal (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
 
     <p *ngIf="welcomeMessage">{{ welcomeMessage }}</p>
-    <button *ngIf="welcomeMessage" (click)="startGame()" class="play-button">Jouer</button>
+    <button *ngIf="welcomeMessage" (click)="startGame()" class="btn-custom">Jouer</button>
   </ng-container>
 
   <ng-container *ngIf="hidePseudo">
     <div *ngIf="showStartMessage" class="title-container">
-      <p class="title">C'est parti !</p>
+      <p class="btn-custom">C'est parti !</p>
     </div>
 
     <ng-container *ngFor="let game of games; let i = index">
-      <div *ngIf="currentGameIndex === i">
+      <div class="ng-container" *ngIf="currentGameIndex === i">
         <div *ngIf="!showQuiz" class="title-container">
-          <p class="title">{{ game.title }}</p>
+          <p class="btn-custom">{{ game.title }}</p>
         </div>
 
         <div class="iframe-container" *ngIf="!showQuiz">
@@ -31,15 +32,16 @@
         </div>
 
         <div *ngIf="!showQuiz">
-          <label [attr.for]="'scoreInput' + i">J'inscris mon {{ i + 1 }}{{ i === 0 ? 'er' : 'ème' }} score : </label>
+          <label class="label" [attr.for]="'scoreInput' + i">J'inscris mon {{ i + 1 }}{{ i === 0 ? 'er' : 'ème' }} score : </label>
           <input
+            class="form-control-custom"
             [id]="'scoreInput' + i"
             type="number"
             [(ngModel)]="score"
             (ngModelChange)="validateScore()"
             [maxlength]="3"
           >
-          <button (click)="submitScore()" [disabled]="!isValidScore">OK</button>
+          <button class="btn-custom" (click)="submitScore()" [disabled]="!isValidScore">OK</button>
           <p *ngIf="showWarning" style="color: red;">
             Êtes-vous sûr ? Le score ne doit pas dépasser le chiffre 100.
           </p>
@@ -57,4 +59,5 @@
       </div>
     </ng-container>
   </ng-container>
+</div>
 </div>

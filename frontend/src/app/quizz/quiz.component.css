@@ -105,6 +105,11 @@ p {
   max-height: 250px;
   padding: 20px;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  margin: 0 30%;
+  
 }
 
 
