@@ -47,12 +47,16 @@ const getTopScores = async () => {
     const scores = await Score.findAll({
       order: [['valeur', 'DESC']],
       limit: 3,
-      // include: [{ model: Joueur, attributes: ['pseudo']}], // Ensure Score has association with Joueur
+      /*include: [{
+        model: Joueur, 
+        attributes: ['pseudo'], // Assure-toi que cette association est bien définie
+        required: true  // Force un INNER JOIN pour récupérer seulement les scores qui ont un joueur associé
+      }]*/
     });
     return scores;
   } catch (error) {
     console.error('Erreur lors de la récupération des scores :', error);
-    throw error; // Il est généralement préférable de propager l'erreur originale
+    throw error;
   }
 };
 

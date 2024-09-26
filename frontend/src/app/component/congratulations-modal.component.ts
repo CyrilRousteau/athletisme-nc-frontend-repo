@@ -5,34 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-congratulations-modal',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="modal">
-      <div class="modal-content">
-        <h2>Félicitations, {{ playerName }} !</h2>
-        <p>Vous avez obtenu un score total de {{ totalScore }}.</p>
-        <button (click)="onRestartGame()">Recommencer à jouer</button>
-      </div>
-    </div>
-  `,
-  styles: [`
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-    }
-  `]
+  templateUrl: './congratulations-modal.component.html',
+  styleUrls: ['./congratulations-modal.component.css']
 })
 export class CongratulationsModalComponent {
   @Input() playerName: string = '';

@@ -133,75 +133,60 @@ export class QuizService {
       ]
     },
     {
-        title: 'Quiz Athlète NC et JO',
-        questions: [
-            {
-                question: "Quel athlete calédonien est qualifié aux JO paralympiques ?",
-                answers: {
-                    1: "Nicolas Brignone A COMPLETER",
-                    2: "Pierre Fairbank A COMPLETER",
-                    3: "Thierry Cibone A COMPLETER"
-                },
-                correctAnswer: "2",
-                imageUrl: "img/??.png"
+      title: 'Quiz Jeux Paralympique',
+      questions: [
+          {
+              question: "Quel jeu paralympique n’a pas son équivalent aux jeux olympiques ?",
+              answers: {
+                  1: "L’aviron",
+                  2: "Boccia",
+                  3: "Hockey sur gazon"
+              },
+              correctAnswer: "2",
+              imageUrl: "img/boccia.png"
+          },
+          {
+              question: "Quelles sont les dernières disciplines à avoir été intégrées au paralympique ?",
+              answers: {
+                  1: "Surf, escalade sportive, skateboard, breakdance",
+                  2: "Escrime en fauteuille roulant, judo, natation, équitation",
+                  3: "Tennis de table, voile, aviron, haltérophilie "
+              },
+              correctAnswer: "1",
+              imageUrl: "img/nouveau_sport.png"
+          },
+          {
+              question: "Quelle est la devise du paralympisme ?",
+              answers: {
+                  1: "Cituis, Altuis, Fortuis",
+                  2: "Construisons l’excellence à partir de nos différences ",
+                  3: "Spirit in motion"
+              },
+              correctAnswer: "3",
+              imageUrl: "img/devise.png"
+          },
+          {
+              question: "En quelle année les jeux paralympiques ont-ils été inventés ?",
+              answers: {
+                  1: "1896",
+                  2: "1932",
+                  3: "1960"
+              },
+              correctAnswer: "3",
+              imageUrl: "img/devise.png"
+          },
+          {
+            question: "Quel athlete calédonien est qualifié aux JO paralympiques ?",
+            answers: {
+                1: "Nicolas Brignone",
+                2: "Pierre Fairbank",
+                3: "Thierry Cibone"
             },
-        ]
-      },
-      {
-        title: 'Quiz Jeux Paralympique',
-        questions: [
-            {
-                question: "Quel jeu paralympique n’a pas son équivalent aux jeux olympiques ?",
-                answers: {
-                    1: "L’aviron",
-                    2: "Boccia",
-                    3: "Hockey sur gazon"
-                },
-                correctAnswer: "2",
-                imageUrl: "img/boccia.png"
-            },
-            {
-                question: "Quelles sont les dernières disciplines à avoir été intégrées au paralympique ?",
-                answers: {
-                    1: "Surf, escalade sportive, skateboard, breakdance",
-                    2: "Escrime en fauteuille roulant, judo, natation, équitation",
-                    3: "Tennis de table, voile, aviron, haltérophilie "
-                },
-                correctAnswer: "1",
-                imageUrl: "img/nouveau_sport.png"
-            },
-            {
-                question: "Quelle est la devise du paralympisme ?",
-                answers: {
-                    1: "Cituis, Altuis, Fortuis",
-                    2: "Construisons l’excellence à partir de nos différences ",
-                    3: "Spirit in motion"
-                },
-                correctAnswer: "3",
-                imageUrl: "img/devise.png"
-            },
-            {
-                question: "En quelle année les jeux paralympiques ont-ils été inventés ?",
-                answers: {
-                    1: "1896",
-                    2: "1932",
-                    3: "1960"
-                },
-                correctAnswer: "3",
-                imageUrl: "img/devise.png"
-            },
-            {
-                question: "Quel symbole est celui des jeux paralympiques ?",
-                answers: {
-                    1: { imageUrl: "img/olympique.png" },
-                    2: { imageUrl: "img/faux_para.png" },
-                    3: { imageUrl: "img/para.png" }
-                },
-                correctAnswer: "3",
-                imageUrl: "img/para.png"
-            }    
-        ]
-      },
+            correctAnswer: "2",
+            imageUrl: "img/pfairbank.png"
+          }    
+      ]
+    },
   ];
 
   getQuizzes(): Quiz[] {

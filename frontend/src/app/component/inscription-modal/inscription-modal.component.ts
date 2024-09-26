@@ -15,6 +15,7 @@ export class InscriptionModalComponent {
   @Output() inscriptionSuccess = new EventEmitter<any>(); // Modifier pour émettre un objet
 
   showModal = false;
+  hideInscriptionButton = false;
   joueur = {
     pseudo: '',
     email: ''
@@ -42,6 +43,7 @@ export class InscriptionModalComponent {
           next: (response: any) => {
             this.closeModalHandler();
             this.inscriptionSuccess.emit(response); // Émettre l'événement avec l'objet joueur
+            this.hideInscriptionButton = true;
           },
           error: (error: any) => {
             // Gérer l'erreur (par exemple, afficher un message à l'utilisateur)
