@@ -1,4 +1,4 @@
-const race = require('./backend/games/race');
+/*const race = require('./backend/games/race');
 
 
 module.exports = (io) => {
@@ -14,3 +14,4 @@ module.exports = (io) => {
         });
     });
 };
+*/

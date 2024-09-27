@@ -36,6 +36,7 @@ export class InscriptionModalComponent {
     return !!this.joueur.pseudo;
   }
 
+
   onSubmit() {
     if (this.isFormValid()) {
       this.http.post('http://localhost:3001/api/joueurs', this.joueur)

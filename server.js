@@ -1,8 +1,8 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
-const sequelize = require('./database');
-const configureSocketIo = require('./socket');
+//const sequelize = require('./database');
+//const configureSocketIo = require('./socket');
 const cors = require('cors'); // Importer le module cors
 const initializeDatabase = require('./dbInit');
 
@@ -30,7 +30,7 @@ app.use('/api', ScoreRoutes);
 app.use('/api', ProfilRoutes);
 
 // Configurer Socket.io
-configureSocketIo(io);
+//configureSocketIo(io);
 
 // Initialiser la base de données avant de démarrer le serveur
 initializeDatabase().then(() => {

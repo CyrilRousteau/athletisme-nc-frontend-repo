@@ -2,19 +2,19 @@
     background-color: #000;
 }
 .bg-img {
-    background-image: url("../../../../public/img/ligne.jpg");
+    background-image: url("../../assets/img/ligne.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
 }
 .bg-img-ligue {
-    background-image: url("../../../../public/img/piste.jpg");
+    background-image: url("../../assets/img/piste.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
 }
 .bg-img-carte {
-    background-image: url("../../../../public/img/duplantis.jpg");
+    background-image: url("../../assets/img/duplantis.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;

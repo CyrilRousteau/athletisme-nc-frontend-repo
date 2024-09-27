@@ -33,7 +33,7 @@ export class QuizService {
             3: "1896"
         },
           correctAnswer: "3",
-          imageUrl: "img/1896.png"
+          imageUrl: "assets/img/1896.png"
         },
         {
             question: "Dans combien de villes passe la flamme olympique ?",
@@ -43,7 +43,7 @@ export class QuizService {
                 3: "470"
             },
             correctAnswer: "1",
-            imageUrl: "img/flamme.png"
+            imageUrl: "assets/img/flamme.png"
           },
           {
             question: "combien de disciplines aux jo 2024 ?",
@@ -53,7 +53,7 @@ export class QuizService {
                 3: "43"
             },
             correctAnswer: "1",
-            imageUrl: "img/jeux.png"
+            imageUrl: "assets/img/jeux.png"
         },
         {
             question: "Aux JO 2024, quel pays a remporté le plus de médailles d’or au 100m haie ?",
@@ -63,7 +63,7 @@ export class QuizService {
                 3: "USA"
             },
             correctAnswer: "3",
-            imageUrl: "img/100mhaie.png"
+            imageUrl: "assets/img/100mhaie.png"
         },
         {
             question: "Quelles sont les valeurs des JO ?",
@@ -73,7 +73,7 @@ export class QuizService {
                 3: "Le plaisir, l’engagement et la tolérance"
             },
             correctAnswer: "2",
-            imageUrl: "img/valeurs.png"
+            imageUrl: "assets/img/valeurs.png"
         },
       ]
     },
@@ -88,7 +88,7 @@ export class QuizService {
                 3: "6, 30 m"
             },
             correctAnswer: "2",
-            imageUrl: "img/saut_perche.png"
+            imageUrl: "assets/img/saut_perche.png"
         },
         {
             question: "Combien d'années consécutives Usain Bolt est resté le détenteur du record de 100m ?",
@@ -98,7 +98,7 @@ export class QuizService {
                 3: "11"
             },
             correctAnswer: "1",
-            imageUrl: "img/usain_bolt.png"
+            imageUrl: "assets/img/usain_bolt.png"
         },
         {
             question: "De manière générale combien de haie il y a sur un 100m ?",
@@ -108,7 +108,7 @@ export class QuizService {
                 3: "14"
             },
             correctAnswer: "2",
-            imageUrl: "img/haie.png"
+            imageUrl: "assets/img/haie.png"
         },
         {
             question: "Quel pays a le plus grand palmarès en lancer de poids chez les hommes ?",
@@ -118,7 +118,7 @@ export class QuizService {
                 3: "États-Unis"
             },
             correctAnswer: "3",
-            imageUrl: "img/poids.png"
+            imageUrl: "assets/img/poids.png"
         },
         {
             question: "Combien de tentatives ont les lanceurs de javelots pour faire le meilleur lancer ?",
@@ -128,7 +128,7 @@ export class QuizService {
                 3: "9"
             },
             correctAnswer: "2",
-            imageUrl: "img/javelot.png"
+            imageUrl: "assets/img/javelot.png"
         }
       ]
     },
@@ -143,7 +143,7 @@ export class QuizService {
                   3: "Hockey sur gazon"
               },
               correctAnswer: "2",
-              imageUrl: "img/boccia.png"
+              imageUrl: "assets/img/boccia.png"
           },
           {
               question: "Quelles sont les dernières disciplines à avoir été intégrées au paralympique ?",
@@ -153,7 +153,7 @@ export class QuizService {
                   3: "Tennis de table, voile, aviron, haltérophilie "
               },
               correctAnswer: "1",
-              imageUrl: "img/nouveau_sport.png"
+              imageUrl: "assets/img/nouveau_sport.png"
           },
           {
               question: "Quelle est la devise du paralympisme ?",
@@ -163,7 +163,7 @@ export class QuizService {
                   3: "Spirit in motion"
               },
               correctAnswer: "3",
-              imageUrl: "img/devise.png"
+              imageUrl: "assets/img/devise.png"
           },
           {
               question: "En quelle année les jeux paralympiques ont-ils été inventés ?",
@@ -173,7 +173,7 @@ export class QuizService {
                   3: "1960"
               },
               correctAnswer: "3",
-              imageUrl: "img/devise.png"
+              imageUrl: "assets/img/devise.png"
           },
           {
             question: "Quel athlete calédonien est qualifié aux JO paralympiques ?",
@@ -183,7 +183,7 @@ export class QuizService {
                 3: "Thierry Cibone"
             },
             correctAnswer: "2",
-            imageUrl: "img/pfairbank.png"
+            imageUrl: "assets/img/pfairbank.png"
           }    
       ]
     },

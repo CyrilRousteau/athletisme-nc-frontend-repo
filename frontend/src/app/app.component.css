@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'StretchPro';
-    src: url('../../../public/font/StretchPro.otf') format('opentype');
+    src: url('../assets/font/StretchPro.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,7 +17,7 @@ body {
     padding: 1%;
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 .imgSize {
     width: 150px;

@@ -1,14 +1,14 @@
 
 
 .bg-img1  {
-    background-image: url("../../../../public/img/ligne.jpg");
+    background-image: url("../../assets/img/ligne.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
 }
 
 .bg-img2  {
-    background-image: url("../../../../public/img/club.jpg");
+    background-image: url("../../assets/img/club.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
