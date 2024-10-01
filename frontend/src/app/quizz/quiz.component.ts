@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CongratulationsModalComponent } from '../component/congratulations-modal.component';
 import { ScoreService } from '../score/score.service';
+import { JoueurService } from '../score/joueur.service';
+import { ResultatService } from '../score/resultat.service';
 
 @Component({
   selector: 'app-quiz',
@@ -16,6 +18,7 @@ export class QuizComponent implements OnInit {
   @Input() quizIndex: number = 0;
   @Input() isLastQuiz: boolean = false;
   @Input() joueurId: number | null = null;
+
   @Output() quizCompleted = new EventEmitter<number>();
   @Output() readyForNextGame = new EventEmitter<void>();
 
@@ -28,8 +31,10 @@ export class QuizComponent implements OnInit {
   showCongratulationsModal: boolean = false;
   playerName: string = '';
   totalScore: number = 0;
+  currentGameIndex: number = 0;
+  showQuiz: boolean = false;
 
-  constructor(private quizService: QuizService, private scoreService: ScoreService) { }
+  constructor(private quizService: QuizService, private scoreService: ScoreService, private joueurService: JoueurService, private resultatService: ResultatService) { }
 
   ngOnInit(): void {
     this.loadQuiz();
@@ -108,25 +113,88 @@ export class QuizComponent implements OnInit {
     this.quizCompleted.emit(this.numCorrect);
   }
 
-  calculateTotalScore(): void {
-    if (this.joueurId !== null) {
-      this.scoreService.getScoresByPlayerId(this.joueurId).subscribe(
-        (scores: any[]) => {
-          this.totalScore = scores.reduce((sum, score) => sum + score.valeur, 0);
-        },
-        (error: any) => {
-          console.error('Erreur lors de la récupération des scores:', error);
-        }
-      );
+  async calculateTotalScore(): Promise<void> {
+    if (this.joueurId !== null) {  // Vérifier que joueurId n'est pas null
+      return new Promise((resolve, reject) => {
+        this.scoreService.getScoresByPlayerId(this.joueurId as number).subscribe(  // Utilisation de 'as number'
+          (scores: any[]) => {
+            this.totalScore = scores.reduce((sum, score) => sum + score.valeur, 0);
+            resolve();
+          },
+          (error: any) => {
+            console.error('Erreur lors de la récupération des scores:', error);
+            reject(error);
+          }
+        );
+      });
+    } else {
+      console.error('joueurId is null');
+      return Promise.reject('joueurId is null');
     }
   }
+  
+  async getPlayerName(): Promise<void> {
+    if (this.joueurId !== null) {  // Vérification que joueurId n'est pas null
+      return new Promise((resolve, reject) => {
+        this.joueurService.getJoueurById(this.joueurId as number).subscribe(  // Utilisation de 'as number'
+          (joueur: any) => {
+            this.playerName = joueur.pseudo;
+            resolve();
+          },
+          (error: any) => {
+            console.error('Erreur lors de la récupération du pseudo:', error);
+            reject(error);
+          }
+        );
+      });
+    } else {
+      console.error('joueurId is null');
+      return Promise.reject('joueurId is null');
+    }
+  }
+  
+  
 
   restartGame(): void {
     location.reload();
   }
 
-  viewScores(): void {
-    this.calculateTotalScore();
-    this.showCongratulationsModal = true;
+
+  async viewScores(): Promise<void> {
+    if (this.joueurId === null) {
+      console.error('joueurId is null');
+      return;
+    }
+  
+    try {
+      await this.calculateTotalScore();
+      await this.getPlayerName();
+      this.showCongratulationsModal = true;
+      await this.persistResult();
+    } catch (error) {
+      console.error('Erreur lors de la récupération des données:', error);
+    }
   }
+  
+  
+
+  async persistResult(): Promise<void> {
+    
+    if (!this.playerName || typeof this.playerName !== 'string' || this.playerName.trim() === '') {
+      console.error('Invalid player name');
+      return;
+    }
+    
+    if (typeof this.totalScore !== 'number' || isNaN(this.totalScore)) {
+      console.error('Invalid total score');
+      return;
+    }
+  
+    try {
+      const response = await this.resultatService.createResultat(this.playerName, this.totalScore).toPromise();
+    } catch (error) {
+      console.error('Erreur lors de la persistance du résultat', error);
+    }
+  }
+  
 }

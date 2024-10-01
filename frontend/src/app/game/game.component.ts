@@ -5,7 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { QuizComponent } from '../quizz/quiz.component';
-import { ScoreService } from '../score/score.service';
+import { ResultatService } from '../score/resultat.service';
 
 @Component({
   selector: 'app-game',
@@ -22,10 +22,11 @@ export class GameComponent implements OnInit {
   score: number | null = null;
   joueurId: number | null = null;
   numCorrect: number = 0;
-  topScores: any[] = [];
   showWarning = false;
   isValidScore = false;
   showStartMessage: boolean = false;
+  hidePodium: boolean = false;
+  topResultats: any[] = [];
 
 
   games: { url: SafeResourceUrl; title: string }[];
@@ -33,7 +34,7 @@ export class GameComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private http: HttpClient,
-    private scoreService: ScoreService
+    private resultatService: ResultatService
   ) {
     this.games = [
       { 
@@ -52,11 +53,12 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadTopScores();
+    this.loadTopResultats();
+    this.hidePodium = false;
   }
 
   onInscriptionSuccess(joueur: any) {
-    this.welcomeMessage = `Bonjour ${joueur.pseudo} ! Click sur "Jouer" pour commencer une partie.`;
+    this.welcomeMessage = `Bonjour <strong>${joueur.pseudo}</strong>  ! Click sur "Jouer" pour commencer une partie.`;
     this.joueurId = joueur.id;
   }
 
@@ -64,6 +66,7 @@ export class GameComponent implements OnInit {
     this.hidePseudo = true;
     this.currentGameIndex = 0;
     this.showStartMessage = true;
+    this.hidePodium = true;
   }
 
   submitScore() {
@@ -74,11 +77,11 @@ export class GameComponent implements OnInit {
         valeur: this.score,
         date: new Date().toISOString()
       };
-
+  
       this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
         () => {
           this.score = null;
-          this.showQuiz = true;
+          this.showQuiz = true;  // Le jeu disparaît et le quiz apparaît après soumission du score
           if (this.currentGameIndex === 0) {
             this.showStartMessage = false;
           }
@@ -89,19 +92,20 @@ export class GameComponent implements OnInit {
       );
     }
   }
-
+  
   onQuizCompleted(numCorrect: number): void {
     this.numCorrect = numCorrect;
     this.submitQuizScore();
   }
-
+  
   onReadyForNextGame(): void {
-    this.showQuiz = false;
+    this.showQuiz = false;  // Masque le quiz et passe au jeu suivant
     this.currentGameIndex++;
     if (this.currentGameIndex >= this.games.length) {
       console.log("Tous les jeux sont terminés.");
     }
   }
+  
 
   submitQuizScore(): void {
     if (this.numCorrect !== null && this.joueurId !== null) {
@@ -124,13 +128,13 @@ export class GameComponent implements OnInit {
     }
   }
 
-  loadTopScores(): void {
-    this.scoreService.getTopScores().subscribe(
-      (scores: any[]) => {
-        this.topScores = scores;
+  loadTopResultats(): void {
+    this.resultatService.getTopResultats().subscribe(
+      (resultats: any[]) => {
+        this.topResultats = resultats;
       },
-      (error: any) => {
-        console.error('Erreur lors de la récupération des scores:', error);
+      (error) => {
+        console.error('Erreur lors de la récupération des résultats :', error);
       }
     );
   }

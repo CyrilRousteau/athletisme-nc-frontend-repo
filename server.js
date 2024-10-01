@@ -1,9 +1,7 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
-//const sequelize = require('./database');
-//const configureSocketIo = require('./socket');
-const cors = require('cors'); // Importer le module cors
+const cors = require('cors');
 const initializeDatabase = require('./dbInit');
 
 const JoueurRoutes = require('./backend/routes/JoueurRoutes');
@@ -12,6 +10,7 @@ const JeuxRoutes = require('./backend/routes/JeuxRoutes');
 const PartieRoutes = require('./backend/routes/PartieRoutes');
 const ScoreRoutes = require('./backend/routes/ScoreRoutes');
 const ProfilRoutes = require('./backend/routes/ProfilRoutes');
+const ResultatRoutes = require('./backend/routes/ResultatRoutes');
 
 const app = express();
 const server = http.createServer(app);
@@ -28,9 +27,7 @@ app.use('/api', JeuxRoutes);
 app.use('/api', PartieRoutes);
 app.use('/api', ScoreRoutes);
 app.use('/api', ProfilRoutes);
-
-// Configurer Socket.io
-//configureSocketIo(io);
+app.use('/api', ResultatRoutes);
 
 // Initialiser la base de données avant de démarrer le serveur
 initializeDatabase().then(() => {

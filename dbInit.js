@@ -1,5 +1,4 @@
 const sequelize = require('./database');
-const Score = require('./backend/models/Score.js'); // Assurez-vous que le chemin est correct
 // Importez d'autres modèles si nécessaire
 
 const initializeDatabase = async () => {

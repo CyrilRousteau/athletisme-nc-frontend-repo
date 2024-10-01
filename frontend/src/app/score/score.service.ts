@@ -14,10 +14,6 @@ export class ScoreService {
     return this.http.get<any[]>(`${this.apiUrl}/player/${playerId}`);
   }
 
-  getTopScores(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/top`);
-  }
-
   getAllScores(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
