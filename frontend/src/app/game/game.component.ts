@@ -46,7 +46,7 @@ export class GameComponent implements OnInit {
         title: 'Course du 100 m'
       },
       { 
-        url: this.sanitizer.bypassSecurityTrustResourceUrl('https://lancerdepoids.netlify.app/'),
+        url: this.sanitizer.bypassSecurityTrustResourceUrl('https://sautenhauteur.netlify.app/'),
         title: 'Saut à la perche'
       }
     ];
