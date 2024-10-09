@@ -46,7 +46,7 @@ export class QuizService {
             imageUrl: "assets/img/flamme.png"
           },
           {
-            question: "combien de disciplines aux jo 2024 ?",
+            question: "Quel est le nombre de disciplines aux JO 2024 ?",
             answers: {
                 1: "32",
                 2: "28",
@@ -56,7 +56,7 @@ export class QuizService {
             imageUrl: "assets/img/jeux.png"
         },
         {
-            question: "Aux JO 2024, quel pays a remporté le plus de médailles d’or au 100m haie ?",
+            question: "Aux JO 2024, quel pays a remporté le plus de médailles d’or au 110m haies ?",
             answers: {
                 1: "Jamaïque",
                 2: "France",
@@ -91,21 +91,21 @@ export class QuizService {
             imageUrl: "assets/img/saut_perche.png"
         },
         {
-            question: "Combien d'années consécutives Usain Bolt est resté le détenteur du record de 100m ?",
+            question: "Combien d’année consécutives Usain Bolt est-il resté le détenteur du record du 100m ?",
             answers: {
-                1: "9",
-                2: "10",
-                3: "11"
+                1: "9 ans",
+                2: "10 ans",
+                3: "11 ans"
             },
             correctAnswer: "1",
             imageUrl: "assets/img/usain_bolt.png"
         },
         {
-            question: "De manière générale combien de haie il y a sur un 100m ?",
+            question: "De manière générale, combien de haies y a-t-il sur le 110m ?",
             answers: {
-                1: "8",
-                2: "10",
-                3: "14"
+                1: "8 haies",
+                2: "10 haies",
+                3: "14 haies"
             },
             correctAnswer: "2",
             imageUrl: "assets/img/haie.png"
@@ -121,7 +121,7 @@ export class QuizService {
             imageUrl: "assets/img/poids.png"
         },
         {
-            question: "Combien de tentatives ont les lanceurs de javelots pour faire le meilleur lancer ?",
+            question: "Combien de tentatives ont les lanceurs pour faire leur meilleur lancer ?",
             answers: {
                 1: "3",
                 2: "6",
@@ -133,32 +133,32 @@ export class QuizService {
       ]
     },
     {
-      title: 'Quiz Jeux Paralympique',
+      title: 'Quiz Jeux Paralympiques',
       questions: [
           {
               question: "Quel jeu paralympique n’a pas son équivalent aux jeux olympiques ?",
               answers: {
                   1: "L’aviron",
-                  2: "Boccia",
-                  3: "Hockey sur gazon"
+                  2: "La boccia",
+                  3: "Le hockey sur gazon"
               },
               correctAnswer: "2",
               imageUrl: "assets/img/boccia.png"
           },
           {
-              question: "Quelles sont les dernières disciplines à avoir été intégrées au paralympique ?",
+              question: "Les athlètes sourd concourent à quels jeux ?",
               answers: {
-                  1: "Surf, escalade sportive, skateboard, breakdance",
-                  2: "Escrime en fauteuille roulant, judo, natation, équitation",
-                  3: "Tennis de table, voile, aviron, haltérophilie "
+                  1: "Les jeux olympiques",
+                  2: "Les jeux paraympiques",
+                  3: "Les jeux deaflympics"
               },
-              correctAnswer: "1",
-              imageUrl: "assets/img/nouveau_sport.png"
+              correctAnswer: "3",
+              imageUrl: "assets/img/deaflympics.png"
           },
           {
               question: "Quelle est la devise du paralympisme ?",
               answers: {
-                  1: "Cituis, Altuis, Fortuis",
+                  1: "Citius, Altius, Fortius",
                   2: "Construisons l’excellence à partir de nos différences ",
                   3: "Spirit in motion"
               },
@@ -173,14 +173,14 @@ export class QuizService {
                   3: "1960"
               },
               correctAnswer: "3",
-              imageUrl: "assets/img/devise.png"
+              imageUrl: "assets/img/para1960.png"
           },
           {
-            question: "Quel athlete calédonien est qualifié aux JO paralympiques ?",
+            question: "Quel athlète calédonien s’est qualifié aux jeux paralympiques ?",
             answers: {
-                1: "Nicolas Brignone",
-                2: "Pierre Fairbank",
-                3: "Thierry Cibone"
+                1: "Nicolas BRIGNONE",
+                2: "Pierre FAIRBANK",
+                3: "Thierry CIBONE"
             },
             correctAnswer: "2",
             imageUrl: "assets/img/pfairbank.png"

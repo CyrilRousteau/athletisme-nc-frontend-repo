@@ -25,7 +25,11 @@ Run `npm run start-server`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Ouvrir la base de donnée
+
+Ouvrir un terminal dans le dossier où se trouve phpliteadmin.php (par exemple dans /mon-projet/admin/), et exécute cette commande : php -S localhost:8000
 
 ## Code scaffolding
 
