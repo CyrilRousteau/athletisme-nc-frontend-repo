@@ -23,13 +23,12 @@
     </div>
   </div>
 
-  <button id="validate" (click)="validateAnswer()" [disabled]="!selectedAnswer">Valider</button>
-
   <div class="feedback" *ngIf="showFeedback">
     <img [src]="quiz!.questions[currentQuestionIndex].imageUrl" alt="Feedback Image">
     <button id="next" (click)="nextQuestion()">Suivant</button>
   </div>
 </div>
+
 
 <div *ngIf="showResults" class="resultats">
   <h2>Résultats du Quiz</h2>

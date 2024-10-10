@@ -30,6 +30,14 @@
   font-family: 'StretchPro';
 }
 
+.required-label::after {
+  content: ' * champ obligatoire';
+  color: red;
+  font-size: 8px;
+  position: relative;
+  top: -0.5em;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -39,6 +47,12 @@
   max-width: 600px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
 }
 
 .close {
@@ -99,4 +113,12 @@
 
 .card-body-custom {
   padding: 40px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
 }

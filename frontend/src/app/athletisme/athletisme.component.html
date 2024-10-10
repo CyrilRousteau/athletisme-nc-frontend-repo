@@ -26,52 +26,56 @@
 </div>
 <div class="container mt-2 pb-5">
     <div class="card card-custom">
-        <div class="card-header card-header-custom">
-            Formulaire d'adhésion
-        </div>
-        <div class="card-body card-body-custom">
-            <form>
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" class="form-control form-control-custom" id="nom" placeholder="Entrez votre nom" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" class="form-control form-control-custom" id="prenom" placeholder="Entrez votre prénom" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control form-control-custom" id="email" placeholder="EX : pierre.dupont@gmail.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="telephone">Téléphone</label>
-                    <input type="tel" class="form-control form-control-custom" id="telephone" placeholder="EX : 70.70.70" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="club">Choix du club</label>
-                    <select class="form-control form-control-custom" id="club" required>
-                        <option value="" disabled selected>Sélectionnez un club</option>
-                        <option value="club1">Club 1</option>
-                        <option value="club2">Club 2</option>
-                        <option value="club3">Club 3</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="licence">Choix de la licence (facultatif)</label>
-                    <select class="form-control form-control-custom" id="licence">
-                        <option value="" selected>Aucune licence</option>
-                        <option value="loisir">Licence Loisir</option>
-                        <option value="competition">Licence Compétition</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-custom justify-content-center">Adhérer</button>
-            </form>
-        </div>
+      <div class="card-header card-header-custom">
+        Formulaire d'adhésion
+      </div>
+      <div class="card-body card-body-custom">
+        <form (ngSubmit)="onSubmit()" #adhesionForm="ngForm">
+          <div class="form-group">
+            <label for="nom" class="required-label">Nom</label>
+            <input type="text" class="form-control form-control-custom" id="nom" required [(ngModel)]="form.nom" name="nom" placeholder="Entrez votre nom">
+          </div>
+  
+          <div class="form-group">
+            <label for="prenom" class="required-label">Prénom</label>
+            <input type="text" class="form-control form-control-custom" id="prenom" required [(ngModel)]="form.prenom" name="prenom" placeholder="Entrez votre prénom">
+          </div>
+  
+          <div class="form-group">
+            <label for="email" class="required-label">Email</label>
+            <input type="email" class="form-control form-control-custom" id="email" required [(ngModel)]="form.email" name="email" placeholder="EX : pierre.dupont@gmail.com">
+          </div>
+  
+          <div class="form-group">
+            <label for="telephone" class="required-label">Téléphone</label>
+            <input type="tel" class="form-control form-control-custom" id="telephone" required [(ngModel)]="form.telephone" name="telephone" placeholder="EX : 70.70.70">
+          </div>
+  
+          <div class="form-group">
+            <label for="club" class="required-label">Choix du club</label>
+            <select class="form-control form-control-custom" id="club" required [(ngModel)]="form.club" name="club">
+              <option value="" disabled>Sélectionnez un club</option>
+              <option value="ASPTT Nouvelle-Calédonie">ASPTT Nouvelle-Calédonie</option>
+              <option value="Olympique de Nouméa section athlé">Olympique de Nouméa section athlé</option>
+              <option value="JS-Vallée du Tir">JS-Vallée du Tir</option>
+              <option value="Club Athlétique Jules Garnier">Club Athlétique Jules Garnier</option>
+              <option value="AS Rivière Salée">AS Rivière Salée</option>
+              <option value="Athletic club espoir de Boulari">Athletic club espoir de Boulari</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="licence">Choix de la licence (facultatif)</label>
+            <select class="form-control form-control-custom" id="licence" [(ngModel)]="form.licence" name="licence">
+              <option value="" selected>Aucune licence</option>
+              <option value="loisir">Licence Loisir</option>
+              <option value="competition">Licence Compétition</option>
+            </select>
+          </div>
+  
+          <button type="submit" class="btn btn-custom justify-content-center">Adhérer</button>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
+  

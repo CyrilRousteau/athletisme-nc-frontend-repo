@@ -31,6 +31,10 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The appl
 
 Ouvrir un terminal dans le dossier où se trouve phpliteadmin.php (par exemple dans /mon-projet/admin/), et exécute cette commande : php -S localhost:8000
 
+## Stockage des media 
+
+Ouvrez un navigateur web et allez sur https://console.cloudinary.com/console
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

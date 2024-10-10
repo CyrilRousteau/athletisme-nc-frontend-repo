@@ -3,9 +3,9 @@ import { QuizService, Quiz, QuizQuestion } from './quiz.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CongratulationsModalComponent } from '../component/congratulations-modal.component';
-import { ScoreService } from '../score/score.service';
-import { JoueurService } from '../score/joueur.service';
-import { ResultatService } from '../score/resultat.service';
+import { ScoreService } from '../services/score.service';
+import { JoueurService } from '../services/joueur.service';
+import { ResultatService } from '../services/resultat.service';
 
 @Component({
   selector: 'app-quiz',
@@ -59,17 +59,16 @@ export class QuizComponent implements OnInit {
 
   selectAnswer(key: string) {
     this.selectedAnswer = key;
-  }
-
-  validateAnswer(): void {
+    
+    // Valider automatiquement dès qu'une réponse est sélectionnée
     if (this.quiz && this.selectedAnswer) {
       const currentQuestion = this.quiz.questions[this.currentQuestionIndex];
       const isCorrect = this.quizService.checkAnswer(currentQuestion, this.selectedAnswer);
-
+  
       if (isCorrect) {
         this.numCorrect++;
       }
-
+  
       this.showFeedback = true;
     }
   }

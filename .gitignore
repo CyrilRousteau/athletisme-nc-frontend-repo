@@ -43,3 +43,7 @@ Thumbs.db
 
 # Database
 database.sqlite
+
+# Ignorer les fichiers environnement
+src/environments/environment.ts
+src/environments/environment.prod.ts

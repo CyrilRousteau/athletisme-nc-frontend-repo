@@ -5,7 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { QuizComponent } from '../quizz/quiz.component';
-import { ResultatService } from '../score/resultat.service';
+import { ResultatService } from '../services/resultat.service';
 
 @Component({
   selector: 'app-game',
@@ -39,15 +39,15 @@ export class GameComponent implements OnInit {
     this.games = [
       { 
         url: this.sanitizer.bypassSecurityTrustResourceUrl('https://lancerdepoids.netlify.app/'),
-        title: 'Lancer de poids'
+        title: 'Épreuve lancer de poids'
       },
       { 
         url: this.sanitizer.bypassSecurityTrustResourceUrl('https://main--100matheltisme.netlify.app/'),
-        title: 'Course du 100 m'
+        title: 'Épreuve course du 100 m'
       },
       { 
         url: this.sanitizer.bypassSecurityTrustResourceUrl('https://sautenhauteur.netlify.app/'),
-        title: 'Saut à la perche'
+        title: 'Épreuve saut à la perche'
       }
     ];
   }
@@ -60,6 +60,7 @@ export class GameComponent implements OnInit {
   onInscriptionSuccess(joueur: any) {
     this.welcomeMessage = `Bonjour <strong>${joueur.pseudo}</strong>  ! Click sur "Jouer" pour commencer une partie.`;
     this.joueurId = joueur.id;
+    this.hidePodium = true;
   }
 
   startGame() {

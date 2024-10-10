@@ -1,15 +1,18 @@
-<button  *ngIf="!hideInscriptionButton" class="licence-acc font" (click)="openModal()">Je m'inscris pour jouer</button>
+<div class="title-container">
+  <h1>Jeux d'athlétisme - quiz</h1>
+  <button  *ngIf="!hideInscriptionButton" class="licence-acc font" (click)="openModal()">Je m'inscris pour jouer</button>
+</div>
 
 <div *ngIf="showModal" class="modal">
   <div class="modal-content card-custom">
-    <span class="close" (click)="closeModalHandler()">&times;</span>
+    <div class="close-container"><span class="close" (click)="closeModalHandler()">&times;</span></div>
     <div class="card-header card-header-custom">
       <h2>Inscription</h2>
     </div>
     <div class="card-body card-body-custom">
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="pseudo">Pseudo *</label>
+          <label for="pseudo" class="required-label">Pseudo</label>
           <input type="text" id="pseudo" class="form-control form-control-custom" [(ngModel)]="joueur.pseudo" name="pseudo" required>
         </div>
         <div class="form-group">

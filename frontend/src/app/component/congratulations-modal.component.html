@@ -4,11 +4,11 @@
         <h2>Félicitations {{ playerName }} !</h2>
       </div>
       <div class="card-body card-body-custom">
-        <p>Vous avez obtenu un score total de {{ totalScore }}.</p>
+        <p class="score">Vous avez obtenu un score total de {{ totalScore }}.</p>
         <p>{{ getCongratulationsMessage() }}</p>
-        <a href="/athletisme" class="licence font text-uppercase btn btn-custom">Adhérer</a>
-        <button class="btn btn-custom" (click)="onRestartGame()">Rejouer</button>
-        <a href="/" class="licence font text-uppercase btn btn-custom">Retour à l'accueil</a>
+        <a href="/athletisme" class="licence text-uppercase btn btn-custom">Adhérer</a>
+        <button class="text-uppercase btn btn-custom" (click)="onRestartGame()">Rejouer</button>
+        <a href="/" class="licence text-uppercase btn btn-custom">Retour à l'accueil</a>
       </div>
     </div>
   </div>
