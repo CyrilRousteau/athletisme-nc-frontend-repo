@@ -45,5 +45,5 @@ Thumbs.db
 database.sqlite
 
 # Ignorer les fichiers environnement
-src/environments/environment.ts
-src/environments/environment.prod.ts
+frontend/src/environments/environment.ts
+frontend/src/environments/environment.prod.ts
