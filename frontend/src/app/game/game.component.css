@@ -68,6 +68,18 @@
   align-items: center;
 }
 
+.mobile-message {
+  display: none;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #8c0e2c;
+  padding: 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
 .padding-nav {
   padding-top: 90px;
 }
@@ -233,6 +245,8 @@ iframe {
   color: #cd7f32; /* Bronze color */
 }
 
+
+
 /* Media queries pour les tablettes */
 @media (min-width: 768px) {
   .game-descriptif {
@@ -276,5 +290,20 @@ iframe {
 
   .img-play {
     width: 100px;
+  }
+}
+
+/* Media queries pour les tablettes et mobiles */
+@media (max-width: 1023px) {
+  .inscription-container app-inscription-modal {
+    display: none;
+  }
+
+  .inscription-container .mobile-message {
+    display: block;
+  }
+
+  .btn-custom {
+    display: none;
   }
 }

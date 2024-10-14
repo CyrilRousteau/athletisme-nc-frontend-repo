@@ -1,5 +1,6 @@
 <div class="padding-nav">
   <div class="game-container">
+    
     <div class="game-title-container">
       <h1 class="game-title">MINI-JEUX D'ATHLTÉTISME</h1>
     </div>
@@ -56,7 +57,12 @@
     </div>
 
     <ng-container *ngIf="!hidePseudo">
-      <app-inscription-modal (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
+      <div class="inscription-container">
+        <app-inscription-modal (inscriptionSuccess)="onInscriptionSuccess($event)"></app-inscription-modal>
+        <div class="mobile-message">
+          Les jeux et quiz ne peuvent pas se jouer sur mobile et tablette.
+        </div>
+      </div>
       <p *ngIf="welcomeMessage" [innerHTML]="welcomeMessage"></p>
       <button *ngIf="welcomeMessage" (click)="startGame()" class="btn-custom">Jouer</button>
     </ng-container>
@@ -101,7 +107,7 @@
             </app-quiz>
           </div>
         </div>
-      </ng-container>
     </ng-container>
+  </ng-container>
   </div>
 </div>

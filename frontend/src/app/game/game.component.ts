@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 import { InscriptionModalComponent } from '../component/inscription-modal/inscription-modal.component';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -27,6 +27,7 @@ export class GameComponent implements OnInit {
   showStartMessage: boolean = false;
   hidePodium: boolean = false;
   topResultats: any[] = [];
+  isMobileOrTablet: boolean = false;
 
 
   games: { url: SafeResourceUrl; title: string }[];
@@ -50,6 +51,7 @@ export class GameComponent implements OnInit {
         title: 'Épreuve saut à la perche'
       }
     ];
+    this.checkScreenSize();
   }
 
   ngOnInit() {
@@ -148,5 +150,14 @@ export class GameComponent implements OnInit {
       this.isValidScore = false;
       this.showWarning = false;
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isMobileOrTablet = window.innerWidth < 1024;
   }
 }
