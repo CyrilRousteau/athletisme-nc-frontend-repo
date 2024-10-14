@@ -35,6 +35,10 @@ Ouvrir un terminal dans le dossier où se trouve phpliteadmin.php (par exemple d
 
 Ouvrez un navigateur web et allez sur https://console.cloudinary.com/console
 
+## Gestion des mails
+
+Allez sur https://dashboard.emailjs.com/admin pour gérer les templates de mail avec emailjs
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

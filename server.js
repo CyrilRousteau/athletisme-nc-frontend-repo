@@ -11,7 +11,6 @@ const PartieRoutes = require('./backend/routes/PartieRoutes');
 const ScoreRoutes = require('./backend/routes/ScoreRoutes');
 const ProfilRoutes = require('./backend/routes/ProfilRoutes');
 const ResultatRoutes = require('./backend/routes/ResultatRoutes');
-const AdhesionRoutes = require('./backend/routes/AdhesionRoutes');
 
 const app = express();
 const server = http.createServer(app);
@@ -29,7 +28,6 @@ app.use('/api', PartieRoutes);
 app.use('/api', ScoreRoutes);
 app.use('/api', ProfilRoutes);
 app.use('/api', ResultatRoutes);
-app.use('/api', AdhesionRoutes);
 
 // Initialiser la base de données avant de démarrer le serveur
 initializeDatabase().then(() => {

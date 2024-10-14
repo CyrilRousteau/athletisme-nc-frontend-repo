@@ -1,7 +1,37 @@
+/* Styles de base pour mobile */
 .page-container {
   display: flex;
   flex-direction: column;
- 
+}
+
+.game-title-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1em;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.game-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #8c0e2c;
+  font-family: 'StretchPro';
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.img-acc {
+  width: 60%;
+  border-radius: 5%;
+}
+
+.img-play {
+  width: 40%;
+  border-radius: 5%;
 }
 
 .game-container {
@@ -9,7 +39,7 @@
   min-height: 70vh;
   margin: 3rem auto;
   padding: 1rem;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   justify-content: center;
@@ -18,10 +48,29 @@
   flex-direction: column;
 }
 
+.game-descriptif {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.descriptif-text {
+  margin: 1rem 0;
+  font-size: large;
+  padding: 0 100px;
+}
+
+.descriptif-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  flex-direction: column;
+  align-items: center;
+}
+
 .padding-nav {
   padding-top: 90px;
 }
-
 
 .score-container {
   margin-top: 3rem;
@@ -182,4 +231,50 @@ iframe {
 .podium-third .podium-score,
 .podium-third .podium-name {
   color: #cd7f32; /* Bronze color */
+}
+
+/* Media queries pour les tablettes */
+@media (min-width: 768px) {
+  .game-descriptif {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  .descriptif-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .descriptif-text {
+    padding: 0 20px;
+  }
+
+  .img-play {
+    width: 80px;
+  }
+}
+
+/* Media queries pour les desktop */
+@media (min-width: 1024px) {
+  .game-descriptif {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  .descriptif-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .descriptif-text {
+    padding: 0 20px;
+  }
+
+  .img-play {
+    width: 100px;
+  }
 }

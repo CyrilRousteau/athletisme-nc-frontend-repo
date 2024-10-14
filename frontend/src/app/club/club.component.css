@@ -1,17 +1,9 @@
-
-
-.bg-img1  {
-    background-image: url("../../assets/img/ligne.jpg");
+.bg-img  {
+    background-image: url("../../assets/img/VOTRE\ CLUB\ -\ Bandeau.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center;
-}
-
-.bg-img2  {
-    background-image: url("../../assets/img/club.jpg");
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: center;
+    padding: 150px;
 }
 
 .bg-white {
@@ -24,16 +16,13 @@
     padding: 50px;
 }
 
-p {
-    color : white;
-}
-
 span {
     color : white;
 }
 
-.img{
+.img-acc {
     width: 60%;
+    border-radius: 5%;
 }
 
 
@@ -50,20 +39,20 @@ span {
 
 .font{
     font-family: 'StretchPro';
-    color: white;
 }
 
 h1 {
     padding-top: 40px;
     padding-bottom: 30px;
+    color: #910303;
 }
 
 h2 {
-    color: white;
+    color: black;
 }
 
 h3 {
-    color: white;
+    color: #910303;;
 }
 
 .texte{
@@ -92,3 +81,41 @@ h3 {
   .licence:hover {
     background-color: #561717; 
   }
+
+.carousel-control-prev,
+.carousel-control-next {
+    height: 50px;
+    width: 50px;
+    outline: none;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control-prev-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23910303' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"); 
+    width: 30px;
+    height: 48px;
+}
+
+.carousel-control-next-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23910303' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    width: 30px;
+    height: 48px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%; /* Centre les flèches verticalement */
+    transform: translateY(-50%); /* Ajuste le positionnement pour qu'elles soient parfaitement centrées */
+    height: 50px; /* Ajustez si nécessaire */
+    width: 50px; /* Ajustez si nécessaire */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px; /* Ajustez si nécessaire */
+    height: 30px; /* Ajustez si nécessaire */
+}

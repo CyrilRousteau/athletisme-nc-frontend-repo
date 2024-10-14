@@ -1,5 +1,29 @@
 <div class="padding-nav">
   <div class="game-container">
+    <div class="game-title-container">
+      <h1 class="game-title">MINI-JEUX D'ATHLTÉTISME</h1>
+    </div>
+    <div class="col-md-7 d-flex justify-content-center">
+      <img src="assets/img/jeu.jpg" class="img-acc" alt="Mini-jeux d'athlétisme">
+    </div>
+    <div class="how-to-play-container" *ngIf="!hidePodium">
+      <h1 class="game-title">Comment jouer ?</h1>
+      <div class="game-descriptif">
+        <div class="descriptif-container">
+          <img src="assets/img/geek.png" class="img-play" alt="geek playing games">
+          <span class="descriptif-text">Participez aux différentes épreuves d’athlétisme à travers des mini-jeux interactifs</span>
+        </div>
+        <div class="descriptif-container">
+          <img src="assets/img/interrogation.png" class="img-play" alt="point d'interrogation">
+          <span class="descriptif-text">Répondez à un quiz complet sur les différents aspects de la ligue.</span>
+        </div> 
+        <div class="descriptif-container">
+          <img src="assets/img/winner-cup.png" class="img-play" alt="coupe gagnant">
+          <span class="descriptif-text">Accumulez des points & tentez de remporter des prix inédits !</span>
+        </div>
+      </div>
+    </div>
+    
     <!-- Votre contenu ici -->
     <div class="score-container" *ngIf="hidePodium && topResultats.length > 0">
       <h2>Top 3 Résultats</h2>
@@ -38,10 +62,6 @@
     </ng-container>
 
     <ng-container *ngIf="hidePseudo">
-      <div *ngIf="showStartMessage" class="title-container">
-        <p class="btn-custom">C'est parti !</p>
-      </div>
-
       <ng-container *ngFor="let game of games; let i = index">
         <div class="ng-container" *ngIf="currentGameIndex === i">
           <div *ngIf="!showQuiz" class="title-container">
