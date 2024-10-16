@@ -1,6 +1,6 @@
 export const environment = {
     production: false, // true dans environment.prod.ts
-    apiUrl: 'https://athlebackend.onrender.com/api',
+    apiUrl: 'http://localhost:3001/api', // https://athlebackend.onrender.com/api en prod
     emailjs: {
         publicKey: 'EMj9AnAU3gidc6MMJ',  // Remplace directement par les valeurs
         gmailServiceId: 'service_8wcoqok',

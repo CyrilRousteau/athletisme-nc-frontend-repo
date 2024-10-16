@@ -1,6 +1,6 @@
 // models/Resultat.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../database');
+const sequelize = require('../database');
 
 const Resultat = sequelize.define('Resultat', {
   joueurName: {

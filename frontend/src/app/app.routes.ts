@@ -7,6 +7,7 @@ import { LigueComponent } from './ligue/ligue.component';
 import { RgpdComponent } from './rgpd/rgpd.component';
 import { HomeComponent } from './home/home.component';
 import { ClubComponent } from './club/club.component';
+import { ErrorComponent } from './error/error.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,4 +17,5 @@ export const routes: Routes = [
   { path: 'ligue', component: LigueComponent },
   { path: 'club', component: ClubComponent },
   { path: 'rgpd', component: RgpdComponent },
+  { path: '**', component: ErrorComponent },
 ];
