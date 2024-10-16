@@ -1,13 +1,12 @@
 {
-  "name": "site",
+  "name": "frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "start-server": "node server.js"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -21,15 +20,8 @@
     "@angular/router": "^18.2.6",
     "@asymmetrik/ngx-leaflet": "^18.0.1",
     "@emailjs/browser": "^4.4.1",
-    "cors": "^2.8.5",
-    "express": "^4.21.0",
     "leaflet": "^1.9.4",
-    "mysql2": "^3.3.2",
-    "rollup": "^4.22.4",
     "rxjs": "~7.8.0",
-    "sequelize": "^6.37.3",
-    "socket.io": "^4.5.3",
-    "sqlite3": "^5.1.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -37,10 +29,8 @@
     "@angular-devkit/build-angular": "^18.2.6",
     "@angular/cli": "^18.2.6",
     "@angular/compiler-cli": "^18.2.6",
-    "@types/debug": "^4.1.12",
     "@types/jasmine": "~5.1.0",
     "@types/leaflet": "^1.9.12",
-    "@types/ms": "^0.7.34",
     "@types/node": "^22.7.5",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -48,7 +38,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "sequelize-cli": "^6.6.2",
     "typescript": "~5.5.2"
   }
 }

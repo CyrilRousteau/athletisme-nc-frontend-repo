@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-inscription-modal',
@@ -39,7 +40,7 @@ export class InscriptionModalComponent {
 
   onSubmit() {
     if (this.isFormValid()) {
-      this.http.post('http://localhost:3001/api/joueurs', this.joueur)
+      this.http.post(`${environment.apiUrl}/joueurs`, this.joueur)
         .subscribe({
           next: (response: any) => {
             this.closeModalHandler();

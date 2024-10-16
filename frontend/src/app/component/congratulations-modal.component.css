@@ -1,73 +1,72 @@
 .modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-custom {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 650px;
-    margin: 0 auto;
-    margin-top: 160px;
-  }
-  
-  .card-header-custom {
-    background-color: #910303;
-    color: white;
-    font-family: 'StretchPro';
-    text-align: center;
-    padding: 20px;
-    font-size: 1.25rem;
-  }
-  
-  .card-body-custom {
-    padding: 40px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  .btn-custom {
-    background-color: #910303;
-    border-radius: 30px;
-    padding: 3px;
-    transition: background-color 0.5s ease, border-radius 0.5s ease;
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.5s ease, color 0.5s ease;
-    width: 300px;
-  }
-  
-  .btn-custom:hover {
-    background-color: #910303;
-    color: white;
-  }
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-  .score {
-    font-weight: 500;
-  }
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  
+.card-custom {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 160px;
+}
+
+.card-header-custom {
+  background-color: #910303;
+  color: white;
+  font-family: 'StretchPro';
+  text-align: center;
+  padding: 20px;
+  font-size: 1.25rem;
+}
+
+.card-body-custom {
+  padding: 40px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-custom {
+  background-color: #910303;
+  border-radius: 30px;
+  padding: 3px;
+  transition: background-color 0.5s ease, border-radius 0.5s ease;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  width: 300px;
+}
+
+.btn-custom:hover {
+  background-color: #910303;
+  color: white;
+}
+
+.score {
+  font-weight: 500;
+}
+

@@ -1,9 +1,9 @@
 #map {
-   height: 400px;
-   width: 800px;
-  }
+  height: 400px;
+  width: 800px;
+ }
 
 .map-container {
- display: flex;
- justify-content: center ;
+display: flex;
+justify-content: center ;
 }

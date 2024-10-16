@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const joueurController = require('../controllers/JoueurController');
+const JoueurController = require('../controllers/JoueurController');
 const cors = require('cors');
 
-router.post('/joueurs', joueurController.createJoueur);
-router.get('/joueurs', joueurController.getAllJoueurs);
-router.get('/joueurs/:id', joueurController.getJoueurById);
-router.put('/joueurs/:id', joueurController.updateJoueur);
-router.delete('/joueurs/:id', joueurController.deleteJoueur);
+router.post('/joueurs', JoueurController.createJoueur);
+router.get('/joueurs', JoueurController.getAllJoueurs);
+router.get('/joueurs/:id', JoueurController.getJoueurById);
+router.put('/joueurs/:id', JoueurController.updateJoueur);
+router.delete('/joueurs/:id', JoueurController.deleteJoueur);
 
 module.exports = router;

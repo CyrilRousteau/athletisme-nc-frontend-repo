@@ -4,10 +4,10 @@
     <div class="game-title-container">
       <h1 class="game-title">MINI-JEUX D'ATHLTÉTISME</h1>
     </div>
-    <div class="col-md-7 d-flex justify-content-center">
+    <div class="col-md-7 d-flex justify-content-center"  *ngIf="showImage">
       <img src="assets/img/jeu.jpg" class="img-acc" alt="Mini-jeux d'athlétisme">
     </div>
-    <div class="how-to-play-container" *ngIf="!hidePodium">
+    <div class="how-to-play-container" *ngIf="showImage">
       <h1 class="game-title">Comment jouer ?</h1>
       <div class="game-descriptif">
         <div class="descriptif-container">

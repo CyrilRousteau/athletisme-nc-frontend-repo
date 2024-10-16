@@ -7,15 +7,18 @@
       "projectType": "application",
       "schematics": {},
       "root": "",
-      "sourceRoot": "frontend/src",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+                "leaflet"
+            ],
             "outputPath": "dist/site",
-            "index": "frontend/src/index.html",
-            "browser": "frontend/src/main.ts",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -23,18 +26,18 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "frontend/src/assets",
+                "input": "src/assets",
                 "output": "assets"
               }
             ],
             "styles": [
-              "frontend/src/styles.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "fileReplacements": [
               {
-                "replace": "frontend/src/environments/environment.ts",
-                "with": "frontend/src/environments/environment.prod.ts"
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
               }
             ]
           },
@@ -42,20 +45,20 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "frontend/src/environments/environment.ts",
-                  "with": "frontend/src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "600kB",
                   "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "6kB",
+                  "maximumError": "10kB"
                 }
               ],
               "outputHashing": "all"
@@ -98,7 +101,7 @@
               }
             ],
             "styles": [
-              "frontend/src/styles.css"
+              "src/styles.css"
             ],
             "scripts": []
           }

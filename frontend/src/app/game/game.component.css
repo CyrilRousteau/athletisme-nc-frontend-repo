@@ -129,6 +129,7 @@ iframe {
   text-decoration: none;
   padding: 0.5rem 1rem;
   width: fit-content;
+  margin: 2rem;
 }
 
 .ng-container {
@@ -245,6 +246,16 @@ iframe {
   color: #cd7f32; /* Bronze color */
 }
 
+/* Media queries pour les tablettes */
+@media (max-width: 460px) {
+  .game-container {
+    margin: 0 auto;
+  }
+
+  .game-title {
+    font-size: 1.5rem;
+  }
+}
 
 
 /* Media queries pour les tablettes */

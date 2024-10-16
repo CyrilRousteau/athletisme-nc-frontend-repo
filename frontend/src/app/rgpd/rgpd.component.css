@@ -1,0 +1,45 @@
+.font{
+    font-family: 'StretchPro';
+}
+h2, h1 {
+    color: #910303; 
+}
+.section {
+    margin: 20px;
+}
+.article {
+    margin: 30px;
+    font-size: 0.9em;
+    color: #555;
+}
+.padding-nav {
+    padding: 90px;
+  }
+  .font {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px;
+  }
+  .section {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .article {
+    margin: 10px;
+    padding: 20px;
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+@media (max-width: 768px) {
+  .padding-nav {
+    padding:80px 20px;
+  }
+}

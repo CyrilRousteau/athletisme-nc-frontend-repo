@@ -396,3 +396,32 @@ a:hover, a:focus, a:active {
   width: 30px; 
   height: 30px; 
 }
+
+
+
+
+/* Media queries pour les tablettes */
+@media (max-width: 460px) {
+  .carousel-control-prev {
+    left: 10%;
+  }
+  
+  .carousel-control-next {
+    right: 10%;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 50%; 
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px; 
+  }
+
+  #insta #post > #post-image {
+    width: 100%;
+  }
+  #insta {
+    width: 100%;
+  }
+}

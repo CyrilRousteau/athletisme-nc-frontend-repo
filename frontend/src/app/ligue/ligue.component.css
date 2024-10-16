@@ -21,12 +21,24 @@ font-size: 1.75rem; /* Taille par défaut (fs-3) pour petits écrans */
 h1.fs-3 {
   font-size: 2.5rem !important; /* Override fs-3 on larger screens with a larger size */
 }
+.leaflet-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 100%;
+}
 }
 
 /* Responsivité */
 @media (max-width: 992px) {
   .bg-img {
       padding: 20px;
+  }
+  .leaflet-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
   }
 }
 
@@ -127,3 +139,4 @@ line-height: 1.5em;
 opacity: 0;
 transition: opacity 0.6s ease;
 }
+

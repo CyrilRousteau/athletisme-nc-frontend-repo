@@ -1,24 +1,37 @@
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io');
 const cors = require('cors');
 const initializeDatabase = require('./dbInit');
+require('dotenv').config();
 
-const JoueurRoutes = require('./backend/routes/JoueurRoutes');
-const CompetenceRoutes = require('./backend/routes/CompetenceRoutes');
-const JeuxRoutes = require('./backend/routes/JeuxRoutes');
-const PartieRoutes = require('./backend/routes/PartieRoutes');
-const ScoreRoutes = require('./backend/routes/ScoreRoutes');
-const ProfilRoutes = require('./backend/routes/ProfilRoutes');
-const ResultatRoutes = require('./backend/routes/ResultatRoutes');
+const JoueurRoutes = require('./routes/joueurRoutes');
+const CompetenceRoutes = require('./routes/CompetenceRoutes');
+const JeuxRoutes = require('./routes/JeuxRoutes');
+const PartieRoutes = require('./routes/PartieRoutes');
+const ScoreRoutes = require('./routes/ScoreRoutes');
+const ProfilRoutes = require('./routes/ProfilRoutes');
+const ResultatRoutes = require('./routes/ResultatRoutes');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const allowedOrigins = ['http://localhost:4200', 'https://athletisme-nc.netlify.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
-app.use(cors()); // Utiliser le middleware CORS
+app.use(cors(corsOptions));
 
 // Utiliser les routes
 app.use('/api', JoueurRoutes);

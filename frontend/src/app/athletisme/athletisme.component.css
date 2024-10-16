@@ -79,3 +79,14 @@ h1 {
 .card-body-custom {
     padding: 40px;
 }
+
+@media (max-width: 460px) {
+    .avantages-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap
+    }
+    .col-5 {
+        width: 100%;
+      }
+}

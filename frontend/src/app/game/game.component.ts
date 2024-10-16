@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { QuizComponent } from '../quizz/quiz.component';
 import { ResultatService } from '../services/resultat.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-game',
@@ -18,6 +19,7 @@ export class GameComponent implements OnInit {
   welcomeMessage: string | null = null;
   hidePseudo: boolean = false;
   showQuiz: boolean = false;
+  showImage: boolean = true;
   currentGameIndex: number = 0;
   score: number | null = null;
   joueurId: number | null = null;
@@ -66,10 +68,12 @@ export class GameComponent implements OnInit {
   }
 
   startGame() {
+    console.log('Démarrage du jeu');
     this.hidePseudo = true;
     this.currentGameIndex = 0;
     this.showStartMessage = true;
-    this.hidePodium = true;
+    this.hidePodium = false;
+    this.showImage = false;
   }
 
   submitScore() {
@@ -81,7 +85,7 @@ export class GameComponent implements OnInit {
         date: new Date().toISOString()
       };
   
-      this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
+      this.http.post<any>(`${environment.apiUrl}/scores`, scoreData).subscribe(
         () => {
           this.score = null;
           this.showQuiz = true;  // Le jeu disparaît et le quiz apparaît après soumission du score
@@ -120,7 +124,7 @@ export class GameComponent implements OnInit {
         date: new Date().toISOString()
       };
 
-      this.http.post<any>('http://localhost:3001/api/scores', scoreData).subscribe(
+      this.http.post<any>(`${environment.apiUrl}/scores`, scoreData).subscribe(
         () => {
           console.log('Score de quiz enregistré avec succès');
         },
